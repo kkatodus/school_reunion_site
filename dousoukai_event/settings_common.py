@@ -45,7 +45,8 @@ INSTALLED_APPS = [
 
     "django.contrib.sites",
     "allauth",
-    "allauth.account"
+    "allauth.account",
+    "allauth.socialaccount"
 ]
 
 MIDDLEWARE = [
@@ -132,6 +133,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,"static"),
+)
+
 AUTH_USER_MODEL = "user.CustomUser"
 
 SITE_ID = 1
@@ -141,13 +146,13 @@ AUTHENTICATION_BACKENDS=(
     "django.contrib.auth.backends.ModelBackend",
 )
 
-ACCOUNT_AUTHENTICATION_METHOD="email"
-ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD="username"
 
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 
 LOGIN_REDIRECT_URL = "share_userpost:home"
 ACCOUNT_LOGOUT_REDIRECT_URL = "account_login"
 
 ACCOUNT_LOGOUT_ON_GET = True
+
+MEDIA_URL = "/media/"

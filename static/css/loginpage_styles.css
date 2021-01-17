@@ -1,0 +1,65 @@
+.container{
+    display:grid;
+    place-items: center;
+    height:100vh;
+    widows: 100vw;
+}
+
+#login_bubble{
+    height:70%;
+    width:60%;
+    background:#EEEEEE;
+    display: flex;
+    border-radius: 30px;
+}
+
+#willkommen{
+    height:100%;
+    width:50%;
+    text-align:justify;
+}
+
+#login{
+    height:100%;
+    width:50%;
+    
+}
+
+#center_separation{
+    height:70%;
+    width:2px;
+    background-color: #999999;
+    position:relative;
+    top:15%;
+}
+
+.section_title{
+    position: relative;
+    top: 5%;
+    left: 10%;
+}
+
+#login form{
+    position:relative;
+    top: 20%;
+    left: 10px;
+}
+
+#willkommen img{
+    height:100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: 25%;
+}
+
+#japan{
+    left: 20%;
+}
+
+#germany{
+    left: 20%;
+}
+
+
+
