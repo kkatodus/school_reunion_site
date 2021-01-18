@@ -1,0 +1,17 @@
+#page_title_container{
+    display: flex;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: grey;
+}
+
+#page_title_text{
+    color: black;
+}
+
+#greeting{
+    display: flex;
+    color: brown;
+}
