@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views import generic,View
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy,reverse
 from django.contrib import messages
+
 
 
 from .models import UserPost
@@ -14,11 +15,15 @@ class HomeView(View):
     template_name = "home.html"
     not_logged_in = reverse_lazy("user:login.html")
     def get(self,request,*args,**kwargs):
-        return render(request,"home.html")
-class EventView(generic.TemplateView,LoginRequiredMixin):
+        if not request.user.is_authenticated:
+            return redirect("accounts/login")
+        return render(request,self.template_name)
+        
+class EventView(HomeView):
     template_name = "event.html"
+    
 
-class AllPostsView(View,LoginRequiredMixin):
+class AllPostsView(View):
     template_name = "posts.html"
     queryset=UserPost.objects.all()
     success_template = "posts.html"
@@ -42,7 +47,7 @@ class AllPostsView(View,LoginRequiredMixin):
             userpost.user = request.user
             userpost.save()
             messages.success(request,"投稿しました")
-            return render(request,self.success_template)
+            return redirect("share_userpost:all_posts")
         else:
             messages.error(request,"投稿に失敗しました")
             print("failed")

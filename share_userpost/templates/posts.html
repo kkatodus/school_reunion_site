@@ -13,7 +13,7 @@
     <div id="photo_content_buttons">
         <a href="{% url 'share_userpost:all_posts' %}" class="button">みんなの投稿</a>
         <a href="{% url 'share_userpost:self_posts' %}" class="button">自分の投稿</a>
-        <a href=# data-toggle="modal" data-target="#CreateUserPost" class="button">投稿する</a>
+        <a href=# data-toggle="modal" data-target="#CreateUserPost" class="button modal-btn">投稿する</a>
     </div>
     <div id="user_posts_container">
         {% for userpost in userpost_list %}
@@ -27,14 +27,16 @@
         
     </div>
 </div>
-<div>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{userpost_form}}
-        <button type="submit">投稿</button>
-    </form>
-    
+<div class="modal-bg">
+    <div class="modal">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{userpost_form}}
+            <button type="submit">投稿</button>
+        </form>
+        <span class="modal-close">X</span>
+        
+    </div>
 </div>
-
+<script src="{% static 'js/post.js' %}"></script>
 {% endblock content %}
-
