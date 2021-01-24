@@ -14,7 +14,9 @@
     align-content: space-around;
     flex-wrap: wrap;
     height: 100%;
-    overflow: scroll;
+    overflow:scroll;
+    position: relative;
+    padding-top: 100px;
 }
 .button{
     text-align: center;
@@ -22,7 +24,7 @@
 }
 
 .user_post{
-    width: 20%;
+    width: 200px;
     height: 300px;
     background-color: grey;
     margin: 20px;

@@ -4,25 +4,29 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy,reverse
 from django.contrib import messages
 
-
-
 from .models import UserPost
 from .forms import UserPostCreationForm
 # Create your views here.
+
+class LoginRequired:
+    @staticmethod
+    def check_login(request,*args,**kwargs):
+        if not request.user.is_authenticated:
+            return redirect("accounts/login")
 
 
 class HomeView(View):
     template_name = "home.html"
     not_logged_in = reverse_lazy("user:login.html")
     def get(self,request,*args,**kwargs):
-        if not request.user.is_authenticated:
-            return redirect("accounts/login")
+        login_check = LoginRequired.check_login(request)
+        if login_check:
+            return login_check
         return render(request,self.template_name)
         
 class EventView(HomeView):
     template_name = "event.html"
     
-
 class AllPostsView(View):
     template_name = "posts.html"
     queryset=UserPost.objects.all()
@@ -33,6 +37,9 @@ class AllPostsView(View):
         return self.queryset.order_by("-created_at")
 
     def get(self,request,*args,**kwargs):
+        login_check = LoginRequired.check_login(request)
+        if login_check:
+            return login_check
         userpost_form = UserPostCreationForm()
         context = {"userpost_list":self.get_queryset(request),
                    "userpost_form":userpost_form}
