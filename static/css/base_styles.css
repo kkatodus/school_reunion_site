@@ -1,8 +1,10 @@
 #home_container{
     display: grid;
-    grid-template-rows: 15% 90%;
+    grid-template-rows: 15% 75%;
     grid-template-columns: 20% 1fr;
     height: 100vh;
+    width: 100%;
+    position: fixed;
 }
 
 #page_title{
@@ -18,7 +20,6 @@
 #page_content{
     grid-row: 2;
     grid-column: 2;
-    background: blueviolet;
 }
 
 footer{

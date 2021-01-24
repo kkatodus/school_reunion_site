@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Duesseldorf|Photos{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/posts_content_styles.css' %}">
+{% endblock head%}
+
+
+{% block content %}
+<div id="posts_content">
+    <div id="photo_content_buttons">
+        <a href="{% url 'share_userpost:all_posts' %}" class="button">みんなの投稿</a>
+        <a href="{% url 'share_userpost:self_posts' %}" class="button">自分の投稿</a>
+        <a href=# data-toggle="modal" data-target="#CreateUserPost" class="button">投稿する</a>
+    </div>
+    <div id="user_posts_container">
+        {% for userpost in userpost_list %}
+            <div class="user_post">
+                <img src="{{userpost.image.url}}">
+                {{userpost.user}}
+
+            </div>
+        {% endfor %}
+
+        
+    </div>
+</div>
+<div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{userpost_form}}
+        <button type="submit">投稿</button>
+    </form>
+    
+</div>
+
+{% endblock content %}
+

@@ -8,4 +8,6 @@ class UserPost(models.Model):
     user = models.ForeignKey(CustomUser,default=1,on_delete=models.CASCADE)
     text = models.CharField(max_length=60)
     image = models.ImageField(upload_to = "photos/")
+    class Meta():
+        verbose_name_plural="UserPost"
     
