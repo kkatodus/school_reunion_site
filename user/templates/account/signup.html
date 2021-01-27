@@ -1,0 +1,17 @@
+{% extends "account/login.html" %}
+
+{% block title %}Duesseldorf|Signup{% endblock title %}
+
+{% block account_function %}Signup{% endblock account_function %}
+    
+{% block form %}
+    <form method="post" action="{% url 'account_signup' %}">
+        {% csrf_token%}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name}}" value="{{ redirect_field_value }}">
+        {% endif %}
+        <button type="submit">Signup</button>
+        <a href="{% url 'account_login' %}">already have an account?</a>
+    </form>
+{% endblock form %}

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/loginpage_styles.css' %}">
-    <title>Duesseldorf|Login</title>
+    <title>{% block title %}Duesseldorf|Login{% endblock title %}</title>
 </head>
 <body>
     <div class="container">
@@ -20,7 +20,9 @@
             </div>
             <div id="center_separation"></div>
             <div id="login">
-                <h3 class="section_title">Login</h3>
+                
+                <h3 class="section_title">{% block account_function %}Login{% endblock account_function %}</h3>
+                {% block form %}
                 <form method="post" action="{% url 'account_login' %}">
                     {% csrf_token%}
                     {{ form.as_p }}
@@ -28,7 +30,9 @@
                         <input type="hidden" name="{{ redirect_field_name}}" value="{{ redirect_field_value }}">
                     {% endif %}
                     <button type="submit">Login</button>
+                    <a href="{% url 'account_signup' %}">still need to signup?</a>
                 </form>
+                {% endblock form %}
             </div>
         </div>
     </div>
