@@ -1,0 +1,35 @@
+.page_above {
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+    padding:  20px;
+}
+
+.page_below {
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+}
+
+#page_above_left{
+    padding:  20px;
+    background-color:
+}
+
+
+#page_above_right{
+    padding:  20px;
+    background-color: 
+}
+
+#page_below_left{
+    padding:  20px;
+    background-color:
+}
+
+#page_below_right{
+    padding:  20px;
+    background-color:
+}

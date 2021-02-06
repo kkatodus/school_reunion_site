@@ -1,12 +1,32 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Duesseldorf|Home{% endblock title %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/home_styles.css' %}">
 {% endblock head%}
 
 
 {% block content%}
-home page
+<div class = 'page'>
+    <div class='page_above'>
+        <div id="page_above_left">
+            <h1>このページの趣旨</h1>
+        </div>
+        <div id= 'page_above_right'>
+            <h2>デュッセルドルフで知り合った仲間たちで成人式を企画したい！</h2>
+        </div>    
+    </div>
+
+    <div class = 'page_below'>
+        <div id ='page_below_left'>
+            <h2>当時の写真をシェアしよう！</h2>
+        </div>
+        <div id = 'page_below_right'>
+            <h2>成人式イベントの情報をしよう！</h2>
+        </div>
+    </div>
+</div>
 {% endblock content%}
 
