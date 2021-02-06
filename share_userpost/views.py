@@ -47,8 +47,6 @@ class AllPostsView(View):
 
     def post(self,request,*args,**kwargs):
         form = UserPostCreationForm(request.POST,request.FILES)
-        print(form)
-        print(form.is_valid())
         if form.is_valid():
             userpost = form.save(commit=False)
             userpost.user = request.user
