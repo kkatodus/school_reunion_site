@@ -8,13 +8,12 @@
     grid-row:1/2;
     display:grid;
     grid-template-columns: 30% 1fr;
-    border-bottom:dotted 3px black
+    border-bottom:dotted 3px salmon
 }
 
 #page_above_left{
     font-size:18px;
     grid-column:1 / 2;
-    background: #faa;
     display: flex;
     justify-content: center;
     align-items: center
@@ -23,7 +22,6 @@
 #page_above_right{
     font-size:15gitpx;
     grid-column:2 / 3;
-    background: #aba;
     display: flex;
     justify-content: center;
     align-items: center
@@ -37,18 +35,25 @@
 
 #page_middle_left{
     grid-column:1/2;
-    background:#bbb;
     display: flex;
     justify-content:center;
     align-items: center;
 }
 
+#page_middle_left_share{
+    font-size: 20px;
+}
+
 #page_middle_right{
     grid-column:2/3;
-    background:#ccc;
     display: flex;
     justify-content:center;
     align-items: center;
+}
+
+
+#page_middle_right_info{
+    font-size:20px
 }
 
 #page_below{
@@ -82,3 +87,4 @@
     justify-content: center;
     align-items: center
 }
+
