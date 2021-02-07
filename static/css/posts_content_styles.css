@@ -19,8 +19,26 @@
     padding-top: 100px;
 }
 .button{
+    list-style-type:none;
     text-align: center;
-    height:100%;
+    background-color: salmon;
+    font-size: 80%;
+    display: grid;
+    height: 100%;
+    place-items: center;
+    border-radius: 5px;
+    width: 20%;
+    text-decoration: none;
+    margin: auto;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.button:current{
+    opacity: 1;
+}
+
+.button:hover{
+    opacity: 1;
 }
 
 .user_post{

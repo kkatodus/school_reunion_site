@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="{% static 'css/components/page_title_styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/components/side_navbar_styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/base_styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
     <title>{% block title %}{% endblock title %}</title>
     {% block head %}{% endblock head%}
 </head>
 <body>
     <div id="home_container">
-        <div id="page_title">
-            {% include "components/page_title.html" %}
-        </div>
+        {% include "components/page_title.html" %}
         <div id="side_nav">
             {% include "components/side_navbar.html" %}
         </div>

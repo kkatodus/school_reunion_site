@@ -1,16 +1,37 @@
 #page_title_container{
-    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns:27% 50% 60% 70%;
+    grid-template-rows: 100%;
     padding: 10px;
-    position: fixed;
+    justify-content: space-around;
     top: 0;
     width: 100%;
+    height: 100%;
+    grid-row: 1;
+    grid-column:1/3;
 }
 
 #page_title_text{
     color: black;
+    font-family: "Sawarabi Mincho";
+}
+
+.emblem{
+    height: 80%;
+    border-radius: 50%;
+    left: 10px;
+}
+
+#emblems{
+    height: 100%;
 }
 
 #greeting{
-    display: flex;
-    color: brown;
+   
 }
+
+#username{
+}
+
+#logout_botton{}
