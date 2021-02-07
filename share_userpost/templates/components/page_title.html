@@ -5,7 +5,10 @@
         <img src="{% static 'img/日本人学校.jpeg' %}" id="jisd" class="emblem">
         <img src="{% static 'img/isd.png' %}" id="isd" class="emblem">
     </div>
-    <h3 id="greeting">Gutentag</h3>
-    <h3 id="username">{{request.user}}</h3>
-    <a href="{% url 'account_logout' %}" id="logout_botton">Logout</a>
+    <div id="user_display">
+        <h3 id="greeting">Gutentag</h3>
+        <h3 id="username">{{request.user}}</h3>
+        <a href="{% url 'account_logout' %}" id="logout_botton">Logout</a>
+    </div>
+    
 </div>
