@@ -15,18 +15,18 @@
 </head>
 <body>
     <div id="home_container">
-        {% include "components/page_title.html" %}
+        <div id='header'>
+            {% include "components/page_title.html" %}
+        </div>
         <div id="side_nav">
             {% include "components/side_navbar.html" %}
         </div>
         <div id="page_content">
             {% block content %}{% endblock content%}
         </div>
-        <footer>
-            <div class="footer">
-                <p>Copyright &copy; Duesseldorf Dousoukai</p>
-            </div>
-        </footer>    
+        <div class="footer">
+            <p>Copyright &copy; Duesseldorf Dousoukai</p>
+        </div>  
     </div>
     
 </body>
