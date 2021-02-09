@@ -7,7 +7,7 @@
     height: 10%;
     place-items: center;
     border-radius: 5px;
-    width: 70%;
+    width: 75%;
     text-decoration: none;
     margin: auto;
     opacity: 0.6;
@@ -31,7 +31,7 @@
 
 .side_navbar_container hr{
     size: 10px;
-    width: 70%;
+    width: 75%;
     bottom: 1000px;
 }
 

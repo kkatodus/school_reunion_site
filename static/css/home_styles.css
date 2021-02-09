@@ -12,19 +12,24 @@
 }
 
 #page_above_left{
-    font-size:18px;
     grid-column:1 / 2;
     display: flex;
     justify-content: center;
     align-items: center
 }
 
+#description{
+    font-size:30px;
+}
+
 #page_above_right{
-    font-size:15gitpx;
     grid-column:2 / 3;
     display: flex;
-    justify-content: center;
-    align-items: center
+    align-items: center;
+}
+
+#message{
+    font-size: 20px;
 }
 
 #page_middle{
