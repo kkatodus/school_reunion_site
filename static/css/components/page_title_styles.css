@@ -1,9 +1,10 @@
 #page_title_container{
     position: relative;
     display: grid;
-    grid-template-columns:25% 10% 40% 25%;
+    grid-template-columns: 30% 20% 1fr;
+    grid-template-rows: 100%;
     width: 100%;
-    height:118.34px;
+    height:100%;
     background-color:	rgb(250, 128, 114,0.8)
 }
 
@@ -11,29 +12,27 @@
     display:flex;
     color: black;
     font-family: "Sawarabi Mincho";
-    grid-column:1/2;
-    height:118.34px;
+    grid-column:1;
+    height:100%;
     margin: auto;
-    align-items: center
 }
 
 #emblems{
     display:flex;
-    grid-column:3/4;
-    grid-template-columns:50% 50%;
-    height:118.34px;
-    align-items: center
-
+    grid-column:2;
+    height:100%;
+    justify-content: center;
+    align-items: center;
 }
 
-img#jisd{
+#emblems #jisd{
     height: 80%;
     border-radius: 50%;
     left: 10px;
     grid-column:1/2;
 }
 
-img#isd{
+#emblems #isd{
     height: 80%;
     border-radius: 50%;
     left: 10px;
@@ -43,7 +42,7 @@ img#isd{
 #user_display{
     display: flex;
     justify-content: space-around;
-    grid-column:4/5;
-    height:118.34px;
+    grid-column:3;
+    height:100%;
     align-items: center
 }
