@@ -5,6 +5,8 @@
     height: 100%;
     width: 100%;
     position: fixed;
+    background-image: url(../img/dus_background_night2.jpg);
+    background-size: cover;
 }
 
 #header{
@@ -30,5 +32,4 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: white;
 }

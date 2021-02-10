@@ -26,7 +26,6 @@
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: white;
 }
 
 .side_navbar_container hr{

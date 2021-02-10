@@ -20,6 +20,7 @@
 
 #description{
     font-size:30px;
+    color:whitesmoke
 }
 
 #page_above_right{
@@ -30,6 +31,7 @@
 
 #message{
     font-size: 20px;
+    color:whitesmoke
 }
 
 #page_middle{
@@ -47,6 +49,7 @@
 
 #page_middle_left_share{
     font-size: 20px;
+    color:whitesmoke
 }
 
 #page_middle_right{
@@ -58,7 +61,8 @@
 
 
 #page_middle_right_info{
-    font-size:20px
+    font-size:20px;
+    color:whitesmoke
 }
 
 #page_below{
@@ -69,7 +73,6 @@
 
 #page_below_left{
     grid-column:1 / 2;
-    background:url('../img/flag_japan.png');
     display: flex;
     background-repeat:  no-repeat; 
     background-size:cover;
@@ -82,7 +85,6 @@
 
 #page_below_right{
     grid-column:2 / 3;
-    background:url('../img/germany-flag.jpg');
     display: flex;
     background-repeat:  no-repeat; 
     background-size:cover;
