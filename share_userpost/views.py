@@ -6,6 +6,7 @@ from django.contrib import messages
 
 from .models import UserPost
 from .forms import UserPostCreationForm
+from .decorators import login_required
 # Create your views here.
 
 class LoginRequired:
@@ -17,11 +18,8 @@ class LoginRequired:
 
 class HomeView(View):
     template_name = "home.html"
-    not_logged_in = reverse_lazy("user:login.html")
+    @login_required
     def get(self,request,*args,**kwargs):
-        login_check = LoginRequired.check_login(request)
-        if login_check:
-            return login_check
         return render(request,self.template_name)
         
 class EventView(HomeView):
@@ -35,11 +33,9 @@ class AllPostsView(View):
     
     def get_queryset(self,request):
         return self.queryset.order_by("-created_at")
-
+    
+    @login_required
     def get(self,request,*args,**kwargs):
-        login_check = LoginRequired.check_login(request)
-        if login_check:
-            return login_check
         userpost_form = UserPostCreationForm()
         context = {"userpost_list":self.get_queryset(request),
                    "userpost_form":userpost_form}
