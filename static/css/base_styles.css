@@ -7,6 +7,8 @@
     position: fixed;
     background-image: url(../img/dus_background_night2.jpg);
     background-size: cover;
+    background-color: rgba(32, 0, 148, 0.3);
+    background-blend-mode: screen
 }
 
 #header{
@@ -32,6 +34,6 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    color:white;
+    color:whitesmoke;
     font-size:18px
 }
