@@ -3,6 +3,8 @@ astroid==2.4.2
 certifi==2020.12.5
 cffi==1.14.4
 chardet==4.0.0
+channels==3.0.3
+channels-redis==3.2.0
 colorama==0.4.4
 cryptography==3.3.1
 defusedxml==0.6.0

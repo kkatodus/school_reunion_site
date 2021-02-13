@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
+    'chat.apps.ChatConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -154,3 +156,12 @@ ACCOUNT_LOGOUT_REDIRECT_URL = "account_login"
 ACCOUNT_LOGOUT_ON_GET = True
 
 MEDIA_URL = "/media/"
+
+# Channels
+ASGI_APPLICATION = 'dousoukai_event.asgi.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': { 'hosts': [('127.0.0.1', 6379)], },
+    },
+}
