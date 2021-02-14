@@ -157,6 +157,12 @@ ACCOUNT_LOGOUT_ON_GET = True
 
 MEDIA_URL = "/media/"
 
+ACCOUNT_FORMS = {
+    "signup":"user.form.CustomUserSignupForm"
+}
+
+ACCOUNT_ADAPTER = "user.adapter.AccountAdapter"
+
 # Channels
 ASGI_APPLICATION = 'dousoukai_event.asgi.application'
 CHANNEL_LAYERS = {
