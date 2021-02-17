@@ -6,11 +6,22 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ['*']
 
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
 DEBUG = False
 
+MIDDLEWARE += ["whitenoise.middleware.WhiteNoiseMiddleware"]
 try:
     from .local_settings import *
 except ImportError:
     pass
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': "dousoukai_event",
+        "HOST":"",
+        "PORT":"",
+    }
+}

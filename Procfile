@@ -1,1 +1,1 @@
-web: gunicorn dousoukai_event.wsgi
+web: gunicorn dousoukai_event.wsgi --log-file -
