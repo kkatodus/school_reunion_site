@@ -11,6 +11,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
 DEBUG = False
 
+MIDDLEWARE += ["whitenoise.middleware.WhiteNoiseMiddleware"]
 try:
     from .local_settings import *
 except ImportError:
