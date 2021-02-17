@@ -16,3 +16,12 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': "dousoukai_event",
+        "HOST":"",
+        "PORT":"",
+    }
+}
