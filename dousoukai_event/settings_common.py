@@ -26,6 +26,7 @@ SECRET_KEY = 'j-#rcrwpm%-c=xhw*9m@4s&ru$6f8ead7r+3x-^1$n=o&r89*v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
+
 DEBUG = False
 
 ALLOWED_HOSTS = ["duesseldorf-dousoukai.herokuapp.com","127.0.0.1"]
