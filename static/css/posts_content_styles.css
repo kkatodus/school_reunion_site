@@ -10,12 +10,10 @@
 }
 #user_posts_container{
     grid-row: 2/3;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     align-content: space-around;
-    flex-wrap: wrap;
     height: 100%;
-    overflow:scroll;
-    position: relative;
 }
 .button{
     list-style-type:none;

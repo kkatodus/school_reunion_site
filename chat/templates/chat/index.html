@@ -1,9 +1,18 @@
+{% extends "base.html" %}
 {% load static %}
+
+{% block title %}Duesseldorf|Event{% endblock title %}
+
+{% block head %}
+{% endblock head%}
+
+
+{% block content %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}">
 
 <div class="header">
-Django - チャットアプリデモ
+Django - チャットアプリ
 </div>
 
 <h2>ルームを新しく作成する<h2>
@@ -18,6 +27,13 @@ Django - チャットアプリデモ
 <h2>ルーム一覧</h2>
 <ul class="select-room-box">
 {% for room in room_list %}
-    <a href="/chat/chat/{{ room.name }}">{{ room.name }}</a>
+    <a href="/chat/chat/{{ room.name }}" id='room_list'>{{ room.name }}</a>
 {% endfor %}
 </ul>
+
+{% endblock content %}
+
+
+
+
+
