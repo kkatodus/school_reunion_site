@@ -39,10 +39,13 @@ class AllPostsView(View):
     def post(self,request,*args,**kwargs):
         if request.method == 'POST':
             form = UserPostCreationForm(request.POST,request.FILES)
+            files = request.FILES.getlist('files')
             if form.is_valid():
-                userpost = form.save(commit=False)
-                userpost.user = request.user
-                userpost.save()
+                for f in files:
+                    userpost = form.save(commit=False)
+                    userpost.user = request.user
+                    userpost.image = f
+                    userpost.save()
                 messages.success(request,"投稿しました")
                 return redirect("share_userpost:all_posts")
             else:
