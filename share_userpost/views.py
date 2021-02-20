@@ -37,24 +37,18 @@ class AllPostsView(View):
         return render(request,self.template_name,context)
 
     def post(self,request,*args,**kwargs):
-        if request.method == 'POST':
-            form = UserPostCreationForm(request.POST,request.FILES)
-            files = request.FILES.getlist('files')
-            if form.is_valid():
-                for f in files:
-                    userpost = form.save(commit=False)
-                    userpost.user = request.user
-                    userpost.image = f
-                    userpost.save()
-                messages.success(request,"投稿しました")
-                return redirect("share_userpost:all_posts")
-            else:
-                messages.error(request,"投稿に失敗しました")
-                print("failed")
+        form = UserPostCreationForm(request.POST,request.FILES)	        
+        if form.is_valid():	            
+            userpost = form.save(commit=False)	            
+            userpost.user = request.user	                
+            userpost = form.save(commit=False)
+            userpost.save()
+            messages.success(request,"投稿しました")    
+            return redirect("share_userpost:all_posts")
         else:
-            form = UserPostCreationForm()
-            
-        return render(request,self.failure_template)
+            messages.error(request,"投稿に失敗しました")
+            print("failed")	
+            return render(request,self.failure_template)
 
 class SelfPostsView(AllPostsView):
     success_template = "posts.html"
