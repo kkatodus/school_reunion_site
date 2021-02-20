@@ -1,4 +1,16 @@
-{{ request.user.username }}
-{{ request.user.id }}
+{% extends "base.html" %}
+{% load static %}
+{% block title%}Duesseldorf|Profile{% endblock title%}
+{% block head %}
+{% endblock head %}
 
-editing user profile
+{% block content %}
+    <img src="{{ request.user.profile.profile_picture.url }}" style="width:50%;">     
+    {% if request.user.profile.date_moved_to_germany %}
+        <h3 style="color:white;">{{ request.user.profile.date_moved_to_germany }}</h3>
+    {% else %}
+        <h3 style="color:white;">ドイツにきた時期を入力していません</h3>
+    {% endif %} 
+
+    <h3 style="color:white;">{{ request.user.profile.years_in_germany }}</h3>
+{% endblock content %}
