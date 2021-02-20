@@ -1,0 +1,12 @@
+{% extends "base.html"%}
+
+{% block title %}Duesseldorf|Profile{% endblock title%}
+
+{% block content %}
+<form base method="POST" action="{{ request.user.id }}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">change profile</button>
+</form>
+
+{% endblock content %}

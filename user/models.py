@@ -34,13 +34,18 @@ class UserManager(BaseUserManager):
                                 is_admin=True)
         return user
 
+    
+class UserProfile(models.Model):
+    profile_picture = models.ImageField(upload_to="photos/")
+    date_moved_to_germany = models.DateField(blank=True,null=True)
+    years_in_germany = models.IntegerField(blank=True, null=True,default=0)
+
 class CustomUser(AbstractBaseUser,PermissionsMixin):
     username = models.CharField(max_length=20, unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
-    date_moved_to_germany = models.DateField(blank=True,null=True)
-    years_in_germany = models.IntegerField(blank=True, null=True,default=0)
+    profile = models.ForeignKey(UserProfile,null=True,blank=True,on_delete=models.CASCADE)
 
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = []
@@ -56,4 +61,3 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
     def has_module_perms(self,app_label):
         return True
 
-    

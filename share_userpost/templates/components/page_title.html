@@ -9,8 +9,7 @@
     </div>
     <div id="user_display">
         <h3 id="greeting">Gutentag</h3>
-        <a href="{% url 'user:detail' %}"><h3 id="username">{{request.user}}</h3></a>
+        <a base href="user/detail/{{ request.user.id }}"><h3 id="username">{{request.user}}</h3></a>
         <a href="{% url 'account_logout' %}" id="logout_botton">Logout</a>
-    </div>
-    
+    </div>  
 </div>
