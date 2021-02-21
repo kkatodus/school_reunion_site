@@ -25,12 +25,26 @@ class UserDetailView(View):
     def post(self,request,user_id=None, *args, **kwargs):
         user = CustomUser.objects.get(id=user_id)
         user_profile_form = UserProfileCreationForm(request.POST,request.FILES)
+        profile = user.profile
         print(user_profile_form)
         if user_profile_form.is_valid():
             user_profile_instance = user_profile_form.save(commit=True)
+            if user.profile:           
+                user.profile = None
+                profile.delete()     
             user.profile = user_profile_instance
             user.save()
         else:
-            print("form is not valid stupid")
-        print(user_id)
+            print("Form is not valid mate")
         return redirect("share_userpost:home")
+
+class UserProfileEditView(UserDetailView):
+    profile_edit_template = "profile/user_profile_edit.html"
+    
+    @login_required
+    def get(self, request, user_id=None,*args, **kwargs):
+        user = CustomUser.objects.get(id=user_id)
+        data = [(user.profile.date_moved_to_germany,"date_moved_to_germany","text"),
+                (user.profile.years_in_germany,"years_in_germany","number")]
+        context = {"data":data}
+        return render(request, self.profile_edit_template)

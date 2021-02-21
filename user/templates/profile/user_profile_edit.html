@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}Duesseldorf|Profile{% endblock title%}
+{% block head %}
+{% endblock head %}
+
+{% block content %}
+    <form method="POST" action="{{request.user.id}}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="profile_picture" accept="image/*" required>
+
+        <input type="text" value="{{request.user.profile.date_moved_to_germany}}" name="date_moved_to_germany">
+
+        <input type="number" value="{{request.user.profile.years_in_germany}}" name="years_in_germany">
+        <button type="submit">保存する</button>
+    </form>
+{% endblock content %}

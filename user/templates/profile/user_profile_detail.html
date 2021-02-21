@@ -7,10 +7,10 @@
 {% block content %}
     <img src="{{ request.user.profile.profile_picture.url }}" style="width:50%;">     
     {% if request.user.profile.date_moved_to_germany %}
-        <h3 style="color:white;">{{ request.user.profile.date_moved_to_germany }}</h3>
+        <input type="text" name="day_moved_to_germany" value="{{ request.user.profile.date_moved_to_germany }}">
     {% else %}
-        <h3 style="color:white;">ドイツにきた時期を入力していません</h3>
+        <input type="text" name="day_moved_to_germany" value="ドイツにきた時期を入力していません。">
     {% endif %} 
-
     <h3 style="color:white;">{{ request.user.profile.years_in_germany }}</h3>
+    <a base href="edit/{{request.user.id}}">プロフィールを編集する</a>
 {% endblock content %}
