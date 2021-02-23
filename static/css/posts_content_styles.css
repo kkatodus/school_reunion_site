@@ -40,21 +40,8 @@
     opacity: 1;
 }
 
-.user_post{
-    width: 200px;
-    height: 300px;
-    background-color: grey;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.user_post img{
-    height: 50%;
-    width: 80%;
-    
-    
+.card{
+    margin: 5px 5px 5px 5px;
 }
 
 .modal-bg{
