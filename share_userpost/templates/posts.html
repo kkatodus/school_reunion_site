@@ -35,7 +35,7 @@
     <div class="modal">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{userpost_form}}
+            {{userpost_form.as_p}}
             <button type="submit">投稿</button>
         </form>
         <span class="modal-close">X</span>
