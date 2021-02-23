@@ -37,7 +37,6 @@ Django - チャットアプリ - {{ room.name }}
 
 <div class="chat-room-footer">
     <div class="send-msg">
-        <input placeholder="名前を入力" id="name" value=""/>
         <input placeholder="メッセージを入力" id="msg" value=""/><button id="send">送信</button>
     </div>
 </div>
@@ -56,7 +55,6 @@ const ws = new WebSocket(
 
 document.getElementById("send").onclick = function sendMessage () {
     var sendData = {
-        name: document.getElementById('name').value,
         message: document.getElementById('msg').value
     }
     ws.send(JSON.stringify(sendData))
@@ -72,6 +70,7 @@ ws.onmessage = e => {
     document.getElementById('footer').insertAdjacentHTML('beforebegin', header + body)
     document.getElementById('footer').appendChild(messageBox)
 }
+
 
 </script>
 
