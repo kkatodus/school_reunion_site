@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}">
 
 <p class="rooms" id="rooms_create">ルームを新しく作成する</p>
-<div class="rooms">
+<div class="rooms" id="rooms_input">
     <form action="room/" method="post" class="rooms">
         {% csrf_token %}
         <input placeholder="ルーム名を入力" type="text" name="room_name" value="">
@@ -20,6 +20,7 @@
     </form>
 </div>
 
+<hr></hr>
 
 <p class="rooms" id="rooms_list">ルーム一覧</p>
 

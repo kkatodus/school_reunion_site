@@ -137,9 +137,14 @@ form, send-msg {
     padding:15px 15px 15px 15px
 }
 
+#rooms_input {
+    padding-bottom: 5%;
+}
+
 #rooms_create {
     font-size:30px;
-    color:white
+    color:white;
+    padding-top:5%
 }
 
 #rooms_list {
