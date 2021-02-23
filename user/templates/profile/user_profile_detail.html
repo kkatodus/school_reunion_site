@@ -5,12 +5,17 @@
 {% endblock head %}
 
 {% block content %}
-    <img src="{{ request.user.profile.profile_picture.url }}" style="width:50%;">     
-    {% if request.user.profile.date_moved_to_germany %}
-        <input type="text" name="day_moved_to_germany" value="{{ request.user.profile.date_moved_to_germany }}">
-    {% else %}
-        <input type="text" name="day_moved_to_germany" value="ドイツにきた時期を入力していません。">
-    {% endif %} 
-    <h3 style="color:white;">{{ request.user.profile.years_in_germany }}</h3>
-    <a base href="edit/{{request.user.id}}">プロフィールを編集する</a>
+    <div id="user_profile_container">
+        <img src="{{ request.user.profile.profile_picture.url }}" class="img-thumbnail">     
+        <div id="user_infos">
+            {% if request.user.profile.date_moved_to_germany %}
+            <h5>ドイツにきた日付:{{request.user.profile.date_moved_to_germany}}</h2>            
+            {% else %}
+            <h5>ドイツにきた日付:ドイツにきた日付を入力していません</h2>
+            {% endif %} 
+            <h5>ドイツにいた年数：{{ request.user.profile.years_in_germany }}</h3>
+            <a base href="edit/{{request.user.id}}">プロフィールを編集する</a>
+        </div>
+    </div>
+    
 {% endblock content %}

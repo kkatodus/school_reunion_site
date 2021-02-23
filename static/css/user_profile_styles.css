@@ -1,0 +1,23 @@
+#user_profile_container{
+    height: 100%;
+    width: 100%;
+    background-color: azure;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: 100%;
+}
+#user_profile_container>img{
+    grid-column: 1;
+    width: 100%;
+}
+
+#user_infos{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+hr{
+    background-color: white;
+}

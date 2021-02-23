@@ -6,10 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/components/page_title_styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/components/side_navbar_styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/side_navbar_user_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base_user_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/user_profile_styles.css' %}"> 
     <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>{% block title %}{% endblock title %}</title>
     {% block head %}{% endblock head%}
 </head>
@@ -19,7 +21,7 @@
             {% include "components/page_title_user.html" %}
         </div>
         <div id="side_nav">
-            {% include "components/side_navbar.html" %}
+            {% include "components/side_navbar_user.html" %}
         </div>
         <div id="page_content">
             {% block content %}{% endblock content%}
@@ -28,6 +30,7 @@
             <p>Copyright &copy; Duesseldorf Dousoukai</p>
         </div>  
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </body>
 </html>

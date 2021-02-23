@@ -1,0 +1,36 @@
+.side_nav_item{
+    list-style-type:none;
+    text-align: center;
+    background-color: salmon;
+    font-size: 80%;
+    display: grid;
+    height: 10%;
+    place-items: center;
+    border-radius: 5px;
+    width: 75%;
+    text-decoration: none;
+    margin: auto;
+    opacity: 0.6;
+    transition: 0.3s;
+
+}
+
+.side_nav_item:hover{
+    opacity: 1;
+    
+}
+
+
+.side_navbar_container{
+    height: 70%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.side_navbar_container hr{
+    size: 10px;
+    width: 75%;
+    bottom: 1000px;
+}
+
