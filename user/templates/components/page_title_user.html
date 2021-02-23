@@ -1,0 +1,15 @@
+{% load static %}
+<div id="page_title_container">
+    <div id="page_title_text">
+        <h1>デュッセルドルフ成人式</h1>
+    </div>
+    <div id="emblems">
+        <img src="{% static 'img/日本人学校.jpeg' %}" id="jisd" >
+        <img src="{% static 'img/isd.png' %}" id="isd" >
+    </div>
+    <div id="user_display">
+        <h3 id="greeting">Gutentag</h3>
+        <a base href="{{ request.user.id }}"><h3 id="username">{{request.user}}</h3></a>
+        <a href="{% url 'account_logout' %}" id="logout_botton">Logout</a>
+    </div>  
+</div>

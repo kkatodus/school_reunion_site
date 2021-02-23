@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/components/page_title_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/side_navbar_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base_styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+    <title>{% block title %}{% endblock title %}</title>
+    {% block head %}{% endblock head%}
+</head>
+<body>
+    <div id="home_container">
+        <div id='header'>
+            {% include "components/page_title_user.html" %}
+        </div>
+        <div id="side_nav">
+            {% include "components/side_navbar.html" %}
+        </div>
+        <div id="page_content">
+            {% block content %}{% endblock content%}
+        </div>
+        <div class="footer">
+            <p>Copyright &copy; Duesseldorf Dousoukai</p>
+        </div>  
+    </div>
+    
+</body>
+</html>
