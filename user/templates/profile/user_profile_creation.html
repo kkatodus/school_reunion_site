@@ -3,10 +3,15 @@
 {% block title %}Duesseldorf|Profile{% endblock title%}
 
 {% block content %}
-<form base method="POST" action="{{ request.user.id }}" enctype="multipart/form-data">
+<form method="POST" action="{{request.user.id}}" enctype="multipart/form-data" id="user_profile_container">
     {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">change profile</button>
+    <input type="file" name="profile_picture" accept="image/*" required style="grid-column: 1;">
+    <div id="user_infos">
+        <input type= "date" value="{{request.user.profile.date_moved_to_germany}}" name="date_moved_to_germany">
+        <input type="number" value="{{request.user.profile.years_in_germany}}" name="years_in_germany">
+        <button type="submit">保存する</button>
+    </div>
+    
 </form>
 
 {% endblock content %}

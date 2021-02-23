@@ -15,21 +15,26 @@
 Django - チャットアプリ
 </div>
 
-<h2>ルームを新しく作成する<h2>
-<div class="create-room-box">
-    <form action="room/" method="post">
+<p class="rooms" id="rooms_create">ルームを新しく作成する</p>
+<div class="rooms">
+    <form action="room/" method="post" class="rooms">
         {% csrf_token %}
         <input placeholder="ルーム名を入力" type="text" name="room_name" value="">
         <input type="submit" class="send" name="button" value="作成"> 
     </form>
 </div>
 
-<h2>ルーム一覧</h2>
+
+<p class="rooms" id="rooms_list">ルーム一覧</p>
+
+<div class="rooms">
 <ul class="select-room-box">
+
 {% for room in room_list %}
     <a href="/chat/chat/{{ room.name }}" id='room_list'>{{ room.name }}</a>
 {% endfor %}
 </ul>
+</div>
 
 {% endblock content %}
 

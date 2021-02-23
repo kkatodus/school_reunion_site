@@ -26,6 +26,7 @@ hr{
 
 .user_info_item{
     display: flex;
+    justify-content: center;
 }
 
 .user_info_item>img{

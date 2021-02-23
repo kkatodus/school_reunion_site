@@ -75,7 +75,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 name=event['name'],
                 content=event['message']
             )
-            
+          
+
+  
 
 '''
 from channels.generic.websocket import AsyncWebsocketConsumer

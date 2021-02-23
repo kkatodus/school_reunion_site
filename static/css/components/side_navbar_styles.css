@@ -12,6 +12,7 @@
     margin: auto;
     opacity: 0.6;
     transition: 0.3s;
+    color: azure;
 
 }
 
@@ -20,9 +21,8 @@
     
 }
 
-
 .side_navbar_container{
-    height: 100%;
+    height: 70%;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
@@ -32,5 +32,9 @@
     size: 10px;
     width: 75%;
     bottom: 1000px;
+}
+
+hr{
+    background-color: white;
 }
 
