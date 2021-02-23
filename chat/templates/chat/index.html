@@ -24,14 +24,13 @@
 
 <p class="rooms" id="rooms_list">ルーム一覧</p>
 
-<div class="rooms">
-<ul class="select-room-box">
+
+<ul class="select-room-box2">
 
 {% for room in room_list %}
     <a href="/chat/chat/{{ room.name }}" id='room_list'>{{ room.name }}</a>
 {% endfor %}
 </ul>
-</div>
 
 {% endblock content %}
 

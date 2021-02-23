@@ -42,6 +42,7 @@ form, send-msg {
 
 #room_list{
     color:whitesmoke;
+
 }
 
 
@@ -152,4 +153,19 @@ form, send-msg {
     color:white;
     padding-top:5%
 }
+
+ul.select-room-box2 { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    font-size:25px
+}
+
+ul.select-room-box2 a {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 
