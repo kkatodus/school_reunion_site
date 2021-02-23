@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: 40% 1fr;
     grid-template-rows: 100%;
+    border-radius: 10px;
 }
 #user_profile_container>img{
     grid-column: 1;
@@ -16,8 +17,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 
 hr{
     background-color: white;
 }
+
+.user_info_item{
+    display: flex;
+}
+
+.user_info_item>img{
+    height: 20px;
+}
+
+#user_infos>input, #user_infos>button{
+    width: 50%;
+}
+
