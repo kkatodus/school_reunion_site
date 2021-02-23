@@ -1,10 +1,11 @@
-
+{% load static %}
 <nav class="side_navbar_container"> 
-    <a  class="side_nav_item" href="{% url 'share_userpost:home' %}">HOME</a>
+    <a href="{% url 'share_userpost:home' %}" class="side_nav_item"><img src="{% static 'img/home.svg' %}"><h6>HOME</h6></a> 
     <hr>
-    <a  class="side_nav_item" href="{% url 'share_userpost:all_posts' %}">PHOTOS</a>
+    <a href="{% url 'share_userpost:all_posts' %}" class="side_nav_item"><img src="{% static 'img/photo.svg' %}"><h6>PHOTOS</h6></a>
     <hr>
-    <a  class="side_nav_item" href="{% url 'share_userpost:event' %}">EVENT</a>
+    <a href="{% url 'share_userpost:event' %}" class="side_nav_item"><img src="{% static 'img/group.svg' %}"><h6>EVENT</h6></a>
     <hr>
-    <a class='side_nav_item' href ="{% url 'chat:index'%}">CHAT</a>
+    <a href ="{% url 'chat:index'%}" class="side_nav_item"><img src="{% static 'img/chat.svg' %}"><h6>CHAT</h6></a>
+    
 </nav>

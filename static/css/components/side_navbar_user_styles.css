@@ -1,9 +1,11 @@
 .side_nav_item{
     list-style-type:none;
     text-align: center;
-    background-color: salmon;
+    background-color: azure;
     font-size: 80%;
     display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 100%;
     height: 10%;
     place-items: center;
     border-radius: 5px;
@@ -12,8 +14,20 @@
     margin: auto;
     opacity: 0.6;
     transition: 0.3s;
+    color: navy;
+    justify-content: space-around;
 
 }
+
+.side_nav_item>img{
+    height: 40px;
+    grid-column: 1;
+}
+
+.side_nav_item>a{
+    grid-column: 2;
+}
+
 
 .side_nav_item:hover{
     opacity: 1;
