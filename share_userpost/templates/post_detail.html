@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Duesseldorf|Photos{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/posts_content_styles.css' %}">
+{% endblock head%}
+
+
+{% block content %}
+<div id="post_detail_content">
+    <img src="{{post.image.url}}" style="width:50%;">
+    <div id="post_infos">
+        <h5>by {{post.user}}</h5>
+        <h5>{{post.text}}</h5>
+        {% if post.user == request.user %}
+            <a base href="delete-post/{{post.id}}">投稿を削除する</a>
+        {% endif%}
+
+    </div>
+</div>
+{% endblock content %}

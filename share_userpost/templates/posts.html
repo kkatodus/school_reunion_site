@@ -17,13 +17,15 @@
     </div>
     <div id="user_posts_container">
         {% for userpost in userpost_list %}
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{userpost.image.url}}">
-                <div class="card-body">
-                    <h5 class="card-title">{{userpost.user}}</h5>
-                    <p class="card-text">{{userpost.text}}</p>
+            <a base href="userpost-detail/{{userpost.id}}" style="height: auto;">
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src="{{userpost.image.url}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{userpost.user}}</h5>
+                        <p class="card-text">{{userpost.text}}</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         {% endfor %}
 
         

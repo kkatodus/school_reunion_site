@@ -16,6 +16,10 @@
     height: 100%;
 }
 
+.photo_content_buttons>a{
+    color: azure;
+}
+
 .button{
     list-style-type:none;
     text-align: center;
@@ -42,6 +46,7 @@
 
 .card{
     margin: 5px 5px 5px 5px;
+    
 }
 
 .modal-bg{

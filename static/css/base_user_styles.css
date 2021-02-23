@@ -1,6 +1,6 @@
 #home_container{
     display: grid;
-    grid-template-rows: 15% 1fr;
+    grid-template-rows: 15% 1fr 5%;
     grid-template-columns:  20% 1fr;
     height: 100%;
     width: 100%;
