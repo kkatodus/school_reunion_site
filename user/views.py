@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from django.contrib.auth.models import Group
 from share_userpost.decorators import login_required
 from django.views import View
 from .models import CustomUser
@@ -26,12 +26,11 @@ class UserDetailView(View):
         user = CustomUser.objects.get(id=user_id)
         user_profile_form = UserProfileCreationForm(request.POST,request.FILES)
         profile = user.profile
-        print(user_profile_form)
         if user_profile_form.is_valid():
             user_profile_instance = user_profile_form.save(commit=True)
             if user.profile:           
                 user.profile = None
-                profile.delete()     
+                profile.delete()
             user.profile = user_profile_instance
             user.save()
         else:
