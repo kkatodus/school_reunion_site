@@ -18,14 +18,14 @@
 <div class="container">
 
 <div class="header2">
-Django - チャットアプリ - {{ room.name }}
+{{ room.name }}
 </div>
 
 <div class="chat-room-body">
 {% for message in messages %}
     <div class="chat-box">
         <div class="chat-header">
-            名前：{{message.name}}
+            <img src= "{{request.user.profile.profile_picture.url}}" class="user-icon">   {{message.name}}
         </div>
         <div class="chat-body">
             {{message.content}}

@@ -53,6 +53,7 @@ form, send-msg {
     justify-content: center;
     align-items: center;
     color: white;
+    font-size:20px
 }
 
 .back {
@@ -97,6 +98,7 @@ form, send-msg {
     height: calc(100vh - 100px);
     width: 100%;
     overflow-y: scroll;
+    padding:1% 2% 2% 3%
 }
 
 .chat-header {
@@ -104,6 +106,8 @@ form, send-msg {
     padding: 15px;
     padding-bottom: 5px;
     color:whitesmoke;
+    font-weight: bolder;
+    font-size:15px
 }
 
 .chat-body {
@@ -164,8 +168,28 @@ ul.select-room-box2 {
 }
 
 ul.select-room-box2 a {
+
     padding-left: 5px;
     padding-right: 5px;
 }
 
 
+.user-icon {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1.5px solid #eee;
+}
+
+.chat-room-body::-webkit-scrollbar {
+    width: 8px;
+  }
+.chat-room-body::-webkit-scrollbar-track {
+    background: azure;
+    border-radius: 10px;
+}
+.chat-room-body::-webkit-scrollbar-thumb {
+    background: #34c0ef;
+    border-radius: 10px;
+}
