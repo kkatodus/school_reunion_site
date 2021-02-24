@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Duesseldorf|Event{% endblock title %}
+
+{% block head %}
+{% endblock head%}
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}">
+
+<p class="rooms" id="rooms_create">ルームを新しく作成する</p>
+<div class="rooms" id="rooms_input">
+    <form action="room/" method="post" class="rooms">
+        {% csrf_token %}
+        <input placeholder="ルーム名を入力" type="text" name="room_name" value="">
+        <input type="submit" class="send" name="button" value="作成"> 
+    </form>
+</div>
+
+<hr></hr>
+
+<p class="rooms" id="rooms_list">ルーム一覧</p>
+
+
+<ul class="select-room-box2">
+
+{% for room in room_list %}
+    <a href="/chat/chat/{{ room.name }}" id='room_list'>{{ room.name }}</a>
+{% endfor %}
+</ul>
+
+{% endblock content %}
+
+
+
+
+

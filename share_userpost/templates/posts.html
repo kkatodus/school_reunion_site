@@ -17,11 +17,15 @@
     </div>
     <div id="user_posts_container">
         {% for userpost in userpost_list %}
-            <div class="user_post">
-                <img src="{{userpost.image.url}}">
-                {{userpost.user}}
-
-            </div>
+            <a base href="userpost-detail/{{userpost.id}}" style="height: auto;">
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src="{{userpost.image.url}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{userpost.user}}</h5>
+                        <p class="card-text">{{userpost.text}}</p>
+                    </div>
+                </div>
+            </a>
         {% endfor %}
 
         
@@ -31,12 +35,13 @@
     <div class="modal">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{userpost_form}}
+            {{userpost_form.as_p}}
             <button type="submit">投稿</button>
         </form>
         <span class="modal-close">X</span>
         
     </div>
 </div>
-<script src="{% static 'js/post.js' %}"></script>
+<script src="{% static 'js/post.js' %}">
+</script>
 {% endblock content %}

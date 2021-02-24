@@ -162,10 +162,10 @@
             // 拡散されたメッセージをメッセージリストに追加
             let elementLi = document.createElement( "li" );
             elementLi.textContent = strMessage;
-            g_elementListMessage.prepend( elementLi ); // リストの一番上に追加
-            //g_elementListMessage.append( elementLi );    // リストの一番下に追加
+            //g_elementListMessage.prepend( elementLi ); // リストの一番上に追加
+            g_elementListMessage.append( elementLi );    // リストの一番下に追加
         };
-
+        
         // WebSocketクローズ時の処理
         g_socket.onclose = ( event ) =>
         {

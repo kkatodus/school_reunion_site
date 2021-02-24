@@ -1,0 +1,39 @@
+#user_profile_container{
+    height: 100%;
+    width: 100%;
+    background-color: azure;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: 100%;
+    border-radius: 10px;
+}
+#user_profile_container>img{
+    grid-column: 1;
+    width: 100%;
+}
+
+#user_infos{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+hr{
+    background-color: white;
+}
+
+.user_info_item{
+    display: flex;
+    justify-content: center;
+}
+
+.user_info_item>img{
+    height: 20px;
+}
+
+#user_infos>input, #user_infos>button{
+    width: 50%;
+}
+

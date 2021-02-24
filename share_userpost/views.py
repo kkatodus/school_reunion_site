@@ -37,16 +37,17 @@ class AllPostsView(View):
         return render(request,self.template_name,context)
 
     def post(self,request,*args,**kwargs):
-        form = UserPostCreationForm(request.POST,request.FILES)
-        if form.is_valid():
+        form = UserPostCreationForm(request.POST,request.FILES)	        
+        if form.is_valid():	            
+            userpost = form.save(commit=False)	            
+            userpost.user = request.user	                
             userpost = form.save(commit=False)
-            userpost.user = request.user
             userpost.save()
-            messages.success(request,"投稿しました")
+            messages.success(request,"投稿しました")    
             return redirect("share_userpost:all_posts")
         else:
             messages.error(request,"投稿に失敗しました")
-            print("failed")
+            print("failed")	
             return render(request,self.failure_template)
 
 class SelfPostsView(AllPostsView):
@@ -55,5 +56,20 @@ class SelfPostsView(AllPostsView):
         queryset = self.queryset.filter(user = request.user).order_by("-created_at")
         return queryset
         
+class PostDetailView(View):
+    post_detail_template = "post_detail.html"
+    @login_required
+    @open_to_user_groups(user_groups=["admin","authorized_user"],redirect_html="no_access.html")
+    def get(self,request,post_id=None,*args,**kwargs):
+        post = UserPost.objects.get(id=post_id)
+        context = {"post":post}
+        return render(request,self.post_detail_template,context)
+
+class DeletePostView(View):
+    def get(self, request, post_id, *args, **kwargs):
+        post = UserPost.objects.get(id=post_id)
+        if post:
+            post.delete()
+        return redirect("share_userpost:all_posts")
 
 

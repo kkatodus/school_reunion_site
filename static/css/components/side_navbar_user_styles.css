@@ -20,7 +20,7 @@
 }
 
 .side_nav_item>img{
-    height: 40px;
+    height: 60%;
     grid-column: 1;
 }
 
@@ -31,6 +31,7 @@
 
 .side_nav_item:hover{
     opacity: 1;
+    
 }
 
 .side_navbar_container{
@@ -45,8 +46,3 @@
     width: 75%;
     bottom: 1000px;
 }
-
-hr{
-    background-color: white;
-}
-

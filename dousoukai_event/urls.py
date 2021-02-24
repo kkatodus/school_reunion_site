@@ -24,9 +24,9 @@ from . import settings_common,settings_dev
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("share_userpost.urls")),
-    path("user",include("user.urls")),
+    path("user/",include("user.urls")),
     path("accounts/",include("allauth.urls")),
-    path('chat/', include("chat.urls"))
+    path('chat/', include("chat.urls", namespace = 'chat'))
 ]
 
 urlpatterns += static(settings_common.MEDIA_URL,document_root=settings_dev.MEDIA_ROOT)

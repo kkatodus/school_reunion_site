@@ -10,13 +10,16 @@
 }
 #user_posts_container{
     grid-row: 2/3;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     align-content: space-around;
-    flex-wrap: wrap;
     height: 100%;
-    overflow:scroll;
-    position: relative;
 }
+
+.photo_content_buttons>a{
+    color: azure;
+}
+
 .button{
     list-style-type:none;
     text-align: center;
@@ -41,20 +44,8 @@
     opacity: 1;
 }
 
-.user_post{
-    width: 200px;
-    height: 300px;
-    background-color: grey;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.user_post img{
-    height: 50%;
-    width: 80%;
-    
+.card{
+    margin: 5px 5px 5px 5px;
     
 }
 
@@ -82,11 +73,12 @@
     position: relative;
     background-color: white;
     width: 30%;
-    height: 30%;
+    height: 60%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
+    border-radius: 10px;
 }
 
 .modal-close{

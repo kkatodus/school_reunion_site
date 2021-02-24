@@ -1,0 +1,26 @@
+{% extends "base_user.html" %}
+{% load static %}
+{% block title%}Duesseldorf|Profile{% endblock title%}
+{% block head %}
+{% endblock head %}
+
+{% block content %}
+    <div id="user_profile_container">
+        <img src="{{ request.user.profile.profile_picture.url }}" class="img-thumbnail">     
+        <div id="user_infos">
+            {% if request.user.profile.date_moved_to_germany %}
+                <div class="user_info_item">
+                    <img src="{% static 'img/paper-plane.svg' %}"><h5>ドイツにきた日付:{{request.user.profile.date_moved_to_germany}}</h5>           
+                </div>
+            {% else %}
+            <h5>ドイツにきた日付:ドイツにきた日付を入力していません</h5>
+            {% endif %} 
+            <div class="user_info_item">
+                <img src="{% static 'img/germany-flag.jpg' %}"><h5>ドイツにいた年数：{{ request.user.profile.years_in_germany }}</h5>           
+            </div>
+            
+            <a base href="edit/{{request.user.id}}">プロフィールを編集する</a>
+        </div>
+    </div>
+    
+{% endblock content %}
