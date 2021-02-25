@@ -13,7 +13,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def chat(request, room_name):
-    messages = Message.objects.filter(room__name=room_name).order_by('created_at')[:50]
+    messages = Message.objects.filter(room__name=room_name).order_by('-created_at')[:50]
     room = Room.objects.filter(name=room_name)[0]
     template = loader.get_template('chat/chat_room.html')
     context = {
