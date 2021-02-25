@@ -25,7 +25,7 @@
 {% for message in messages %}
     <div class="chat-box">
         <div class="chat-header">
-            <img src= "{{request.user.profile.profile_picture.url}}" class="user-icon">   {{message.name}}
+            <img src= {{message.user.profile.profile_picture.url}} class="user-icon">   {{message.user.username}}
         </div>
         <div class="chat-body">
             <p>{{message.content}}</p>
@@ -67,12 +67,22 @@ ws.onmessage = e => {
     var receiveData = JSON.parse(e.data)
     var messageBox = document.createElement('div')
     messageBox.className = 'chat-box'
-    var header = '<div class="chat-header">名前：' + receiveData.name + '</div>'
+    var header = '<div class="chat-header">' + receiveData.name + '</div>'
     var body = '<div class="chat-body">' + receiveData.message + '</div>'
     document.getElementById('footer').insertAdjacentHTML('beforebegin', header + body)
     document.getElementById('footer').appendChild(messageBox)
+    window.location.reload(true);
 }
 
+$(window).scroll(function() {
+  sessionStorage.scrollTop = $(this).scrollTop();
+});
+
+$(document).ready(function() {
+  if (sessionStorage.scrollTop != "undefined") {
+    $(window).scrollTop(sessionStorage.scrollTop);
+  }
+});
 
 </script>
 
