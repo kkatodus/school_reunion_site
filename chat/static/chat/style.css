@@ -103,7 +103,7 @@ form, send-msg {
 
 .chat-header {
     padding: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 0%;
     color:whitesmoke;
     font-weight: bolder;
     font-size:15px
@@ -213,5 +213,12 @@ ul.select-room-box2 a {
 .chat-room-body::-webkit-scrollbar-thumb {
     background: #34c0ef;
     border-radius: 10px
+}
+
+#created_time {
+    color:azure;
+    padding-left: 5%;
+    padding-top: 0.5%;
+    font-weight: normal;
 }
 

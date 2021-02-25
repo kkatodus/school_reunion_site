@@ -25,10 +25,13 @@
 {% for message in messages %}
     <div class="chat-box">
         <div class="chat-header">
-            <img src= {{message.user.profile.profile_picture.url}} class="user-icon">   {{message.user.username}}
+            <img src= {{message.user.profile.profile_picture.url}} class="user-icon">   {{message.user.username}} 
         </div>
         <div class="chat-body">
             <p>{{message.content}}</p>
+        </div>
+        <div id ="created_time">
+            <p>{{message.created_at}}</p>
         </div>
     </div>
 {% endfor %}
