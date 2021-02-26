@@ -68,15 +68,15 @@ document.getElementById("send").onclick = function sendMessage () {
 
 ws.onmessage = e => {
     var receiveData = JSON.parse(e.data)
+    console.log(receiveData)
     var messageBox = document.createElement('div')
     messageBox.className = 'chat-box'
     var header = '<div class="chat-header">' + receiveData.name + '</div>'
     var body = '<div class="chat-body">' + receiveData.message + '</div>'
     document.getElementById('chat-room-body').insertAdjacentHTML('afterbegin', header + body)
     document.getElementById('chat-room-body').prepend(messageBox)
-    window.location.reload(true)
+    window.location.reload()
 }
-
 
 </script>
 
