@@ -94,7 +94,7 @@ form, send-msg {
     margin: 5px;
 }
 
-.chat-room-body {
+#chat-room-body {
     height: calc(100vh - 100px);
     width: 100%;
     overflow-y: scroll;
@@ -102,19 +102,40 @@ form, send-msg {
 }
 
 .chat-header {
-    border-bottom: solid 2px #aaa;
     padding: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 0%;
     color:whitesmoke;
     font-weight: bolder;
     font-size:15px
 }
 
+
 .chat-body {
-    padding: 15px;
-    padding-left: 25px;
-    color:whitesmoke
-}
+    display: inline-block;
+    position: relative; 
+    margin: 0 0 0 50px;
+    padding: 10px;
+    max-width: 90%;
+    border-radius: 12px;
+    background: #edf1ee;
+  }
+  
+  .chat-body:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 3px; 
+    left: -19px;
+    border: 8px solid transparent;
+    border-right: 18px solid #edf1ee;
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+  }
+  .chat-body p {
+    margin: 0;
+    padding: 0;
+    overflow-wrap: break-word;
+  }
 
 #send {
     padding: 10px;
@@ -182,14 +203,22 @@ ul.select-room-box2 a {
     border: 1.5px solid #eee;
 }
 
-.chat-room-body::-webkit-scrollbar {
+#chat-room-body::-webkit-scrollbar {
     width: 8px;
   }
-.chat-room-body::-webkit-scrollbar-track {
+#chat-room-body::-webkit-scrollbar-track {
     background: azure;
     border-radius: 10px;
 }
-.chat-room-body::-webkit-scrollbar-thumb {
+#chat-room-body::-webkit-scrollbar-thumb {
     background: #34c0ef;
-    border-radius: 10px;
+    border-radius: 10px
 }
+
+#created_time {
+    color:azure;
+    padding-left: 5%;
+    padding-top: 0.5%;
+    font-weight: normal;
+}
+

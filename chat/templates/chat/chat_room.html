@@ -21,14 +21,17 @@
 {{ room.name }}
 </div>
 
-<div class="chat-room-body">
+<div id="chat-room-body">
 {% for message in messages %}
     <div class="chat-box">
         <div class="chat-header">
-            <img src= "{{request.user.profile.profile_picture.url}}" class="user-icon">   {{message.name}}
+            <img src= {{message.user.profile.profile_picture.url}} class="user-icon">   {{message.user.username}} 
         </div>
         <div class="chat-body">
-            {{message.content}}
+            <p>{{message.content}}</p>
+        </div>
+        <div id ="created_time">
+            <p>{{message.created_at}}</p>
         </div>
     </div>
 {% endfor %}
@@ -65,19 +68,17 @@ document.getElementById("send").onclick = function sendMessage () {
 
 ws.onmessage = e => {
     var receiveData = JSON.parse(e.data)
+    console.log(receiveData)
     var messageBox = document.createElement('div')
     messageBox.className = 'chat-box'
-    var header = '<div class="chat-header">名前：' + receiveData.name + '</div>'
+    var header = '<div class="chat-header">' + receiveData.name + '</div>'
     var body = '<div class="chat-body">' + receiveData.message + '</div>'
-    document.getElementById('footer').insertAdjacentHTML('beforebegin', header + body)
-    document.getElementById('footer').appendChild(messageBox)
+    document.getElementById('chat-room-body').insertAdjacentHTML('afterbegin', header + body)
+    document.getElementById('chat-room-body').prepend(messageBox)
+    window.location.reload()
 }
-
 
 </script>
 
 </body>
 {% endblock content %}
-
-
-
