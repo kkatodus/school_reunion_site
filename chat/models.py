@@ -20,4 +20,5 @@ class Message(models.Model):
     user = models.ForeignKey(CustomUser,blank=True, null=True, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)
-
+    def __str__(self):
+        return self.user.username

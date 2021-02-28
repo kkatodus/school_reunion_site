@@ -2,6 +2,7 @@
 
 {% load static %}
 
+
 {% block title %}Duesseldorf|Event{% endblock title %}
 
 {% block head %}
@@ -23,18 +24,28 @@
 
 <div id="chat-room-body">
 {% for message in messages %}
-    <div class="chat-box">
-        <div class="chat-header">
-            <img src= {{message.user.profile.profile_picture.url}} class="user-icon">   {{message.user.username}} 
+    {% if message.user.username == request.user %}
+        <div class="mycomment">
+            <p>
+            {{message.content}}
+            </p>
         </div>
-        <div class="chat-body">
-            <p>{{message.content}}</p>
+    {%　else　%}
+        <div class="chat-box">
+            <div class="chat-header">
+                <img src= {{message.user.profile.profile_picture.url}} class="user-icon">   {{message.user.username}}
+            </div>
+            <div class="chat-body">
+                <p>{{message.content}}</p>
+            </div>
+            <div id ="created_time">
+                <p>{{message.created_at}}</p>
+            </div>
         </div>
-        <div id ="created_time">
-            <p>{{message.created_at}}</p>
-        </div>
-    </div>
-{% endfor %}
+    {% endif %}
+
+{% endfor%}
+
     <div id="footer"></div>
 </div>
 
@@ -79,20 +90,35 @@ ws.onmessage = e => {
     var txt = receiveData.name
     console.log(receiveData)
     var messageBox = document.createElement('div')
-    messageBox.className = 'chat-box'
-    var header = '<div class="chat-header">' + '<img src='  +receiveData.img_url+ ' class="user-icon">' +' ' + receiveData.name + '</div>'
-    var body = '<div class="chat-body">' + receiveData.message + '</div>'
-    function  exchanger(x) {
-        if (x>11){
-            return ' p.m.'
-        }else{
-            return ' a.m.'
+    if (receiveData.name !== document.getElementById('name').value){
+        messageBox.className = 'chat-box'
+        var header = '<div class="chat-header">' + '<img src='  +receiveData.img_url+ ' class="user-icon">' +' ' + receiveData.name + '</div>'
+        var body = '<div class="chat-body">' + receiveData.message + '</div>'
+        function  exchanger(x) {
+            if (x>11){
+                return ' p.m.'
+            }else{
+                return ' a.m.'
+            }
         }
+        var created_T = '<div id ="created_time">' + moment().format('MMM') + '. ' +moment().format('DD')+', '+moment().format('YYYY') + ', ' +moment().format('h') + ':' + moment().format('mm')+ exchanger(Number(moment().format('H')))+ '</div>'
+        document.getElementById('chat-room-body').prepend(messageBox)
+        document.getElementsByClassName('chat-box')[0].insertAdjacentHTML('afterbegin', header + body + created_T)
+    }else{
+        messageBox.className = 'mycomment'
+        var body = '<p>' + receiveData.message + '</p>'
+        function  exchanger(x) {
+            if (x>11){
+                return ' p.m.'
+            }else{
+                return ' a.m.'
+            }
+        }
+        var created_T = '<div id ="created_time">' + moment().format('MMM') + '. ' +moment().format('DD')+', '+moment().format('YYYY') + ', ' +moment().format('h') + ':' + moment().format('mm')+ exchanger(Number(moment().format('H')))+ '</div>'
+        document.getElementById('chat-room-body').prepend(messageBox)
+        document.getElementsByClassName('mycomment')[0].insertAdjacentHTML('afterbegin', body + created_T)
     }
-    var created_T = '<div id ="created_time">' + moment().format('MMM') + '. ' +moment().format('DD')+', '+moment().format('YYYY') + ', ' +moment().format('h') + ':' + moment().format('mm')+ exchanger(Number(moment().format('H')))+ '</div>'
-    document.getElementById('chat-room-body').prepend(messageBox)
-    document.getElementsByClassName('chat-box')[0].insertAdjacentHTML('afterbegin', header + body + created_T)
-    console.log(moment().format('lll'))
+
 }
 
 </script>
