@@ -7,9 +7,6 @@ from user.models import *
 import json
 from django.core import serializers
 from django.forms.models import model_to_dict
-import sys
-from django.views import generic,View
-from django.views.decorators.csrf import ensure_csrf_cookie
 
 
 
