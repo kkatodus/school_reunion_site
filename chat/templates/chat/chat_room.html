@@ -40,8 +40,8 @@
 
 <div class="chat-room-footer">
     <div class="send-msg">
-        <input placeholder="名前を入力" id="img" value="{{request.user.profile.profile_picture.url}}" disabled/>
-        <input placeholder="名前を入力" id="name" value="{{request.user}}" disabled/>
+        <input type="hidden" placeholder="名前を入力" id="img" value="{{request.user.profile.profile_picture.url}}" disabled/>
+        <input type="hidden" placeholder="名前を入力" id="name" value="{{request.user}}" disabled/>
         <input placeholder="メッセージを入力" id="msg" value=""/><button id="send">送信</button>
     </div>
 </div>

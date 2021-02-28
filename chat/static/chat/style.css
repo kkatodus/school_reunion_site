@@ -222,3 +222,7 @@ ul.select-room-box2 a {
     font-weight: normal;
 }
 
+#msg {
+    width:400px;
+    height:50px
+}
