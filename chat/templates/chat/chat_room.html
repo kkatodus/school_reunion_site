@@ -48,6 +48,8 @@
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js" type="text/javascript"></script>
+
 <script>
 
 const ws = new WebSocket(
@@ -80,10 +82,17 @@ ws.onmessage = e => {
     messageBox.className = 'chat-box'
     var header = '<div class="chat-header">' + '<img src='  +receiveData.img_url+ ' class="user-icon">' +' ' + receiveData.name + '</div>'
     var body = '<div class="chat-body">' + receiveData.message + '</div>'
-    var created_T = '<div id ="created_time">' + Date().toLocaleString({ timeZone: 'Asia/Tokyo' }) + '</div>'
+    function  exchanger(x) {
+        if (x>11){
+            return ' p.m.'
+        }else{
+            return ' a.m.'
+        }
+    }
+    var created_T = '<div id ="created_time">' + moment().format('MMM') + '. ' +moment().format('DD')+', '+moment().format('YYYY') + ', ' +moment().format('h') + ':' + moment().format('mm')+ exchanger(Number(moment().format('H')))+ '</div>'
     document.getElementById('chat-room-body').prepend(messageBox)
     document.getElementsByClassName('chat-box')[0].insertAdjacentHTML('afterbegin', header + body + created_T)
-   
+    console.log(moment().format('lll'))
 }
 
 </script>
