@@ -13,6 +13,10 @@ from .models import *
 from urllib.parse import urlparse
 import datetime
 import time
+from user.models import *
+from asgiref.sync import sync_to_async, async_to_sync
+from .views import *
+
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -50,18 +54,22 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 'type': 'chat_message',
                 'message': text_data_json['message'],
                 'name':text_data_json['name'],
+                'img_url':text_data_json['img_url']
             }
         )
 
     # Receive message from room group
+    
     async def chat_message(self, data):
         message = data["message"]
         name = data["name"]
+        img_url  = data['img_url']
         
         # Send message to WebSocket
         await self.send(text_data=json.dumps({
             'message': message,
             'name': name,
+            'img_url':img_url
         }))
 
 

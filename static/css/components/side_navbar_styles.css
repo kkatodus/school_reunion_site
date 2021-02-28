@@ -1,7 +1,7 @@
 .side_nav_item{
     list-style-type:none;
     text-align: center;
-    background-color: azure;
+    background-color:#D4F5F5;
     font-size: 80%;
     display: grid;
     grid-template-columns: 30% 1fr;
