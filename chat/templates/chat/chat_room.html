@@ -40,6 +40,7 @@
 
 <div class="chat-room-footer">
     <div class="send-msg">
+        <input placeholder="名前を入力" id="img" value="{{request.user.profile.profile_picture.url}}" disabled/>
         <input placeholder="名前を入力" id="name" value="{{request.user}}" disabled/>
         <input placeholder="メッセージを入力" id="msg" value=""/><button id="send">送信</button>
     </div>
@@ -47,6 +48,7 @@
 
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script>
 
 const ws = new WebSocket(
@@ -57,25 +59,32 @@ const ws = new WebSocket(
             + '/'
         );
 
+
+
 document.getElementById("send").onclick = function sendMessage () {
+
     var sendData = {
         name: document.getElementById('name').value,
-        message: document.getElementById('msg').value
+        message: document.getElementById('msg').value,
+        img_url: document.getElementById('img').value
     }
     ws.send(JSON.stringify(sendData))
     console.log(JSON.stringify(sendData))
 }
 
+
 ws.onmessage = e => {
     var receiveData = JSON.parse(e.data)
+    var txt = receiveData.name
     console.log(receiveData)
     var messageBox = document.createElement('div')
     messageBox.className = 'chat-box'
-    var header = '<div class="chat-header">' + receiveData.name + '</div>'
+    var header = '<div class="chat-header">' + '<img src='  +receiveData.img_url+ ' class="user-icon">' +' ' + receiveData.name + '</div>'
     var body = '<div class="chat-body">' + receiveData.message + '</div>'
-    document.getElementById('chat-room-body').insertAdjacentHTML('afterbegin', header + body)
+    var created_T = '<div id ="created_time">' + Date().toLocaleString({ timeZone: 'Asia/Tokyo' }) + '</div>'
     document.getElementById('chat-room-body').prepend(messageBox)
-    window.location.reload()
+    document.getElementsByClassName('chat-box')[0].insertAdjacentHTML('afterbegin', header + body + created_T)
+   
 }
 
 </script>
