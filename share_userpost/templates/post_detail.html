@@ -12,7 +12,53 @@
 
 {% block content %}
 <div id="post_detail_content">
-    <img src="{{post.image.url}}" style="width:50%;">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="grid-column:2;width:100%">
+        <div class="carousel-indicators">
+            {% for photo in photos%}
+                {% if forloop.counter == 1 %}
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{forloop.counter}}" class="active" aria-current="true" aria-label="Slide {{forloop.counter}}"></button>
+                {% else %}
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{forloop.counter}}" aria-current="true" aria-label="Slide {{forloop.counter}}"></button>
+                {% endif %}
+            {% endfor %}
+            <!-- <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+        </div>
+        <div class="carousel-inner" style="height: 100%;">
+            <!-- <div class="carousel-item active" data-bs-interval="3500" style="height: 100%;">   
+            <img src="{% static 'img/日本人学校.jpeg' %}" class="d-block w-100" style="height: 100%;opacity:0.5;">
+            </div>
+            <div class="carousel-item" data-bs-interval="3500" style="height: 100%;"> 
+            <img src="{% static 'img/日本人学校.jpeg' %}" class="d-block w-100" alt="..." style="height: 100%;">
+            </div> -->
+            {% for photo in photos %}
+                {% if forloop.counter == 1 %}
+                    <div class="carousel-item active" data-bs-interval="3500" style="height: 100%;"> 
+                        <img src="{{photo.image.url}}" class="d-block w-100" alt="..." style="height: 100%;">
+                    </div>
+                {% else %}
+                    <div class="carousel-item" data-bs-interval="3500" style="height: 100%;"> 
+                        <img src="{{photo.image.url}}" class="d-block w-100" alt="..." style="height: 100%;">
+                    </div>
+                    
+                {% endif %}
+            {% endfor %}
+            
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+<!-- 
+    {% for photo in photos %}
+        <img src="{{photo.image.url}}" style="width:50%;">
+    {% endfor %} -->
     <div id="post_infos">
         <h5>by {{post.user}}</h5>
         <h5>{{post.text}}</h5>

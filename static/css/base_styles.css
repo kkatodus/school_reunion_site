@@ -5,9 +5,9 @@
     height: 100%;
     width: 100%;
     position: fixed;
-    background-image: url(../img/dus_background_night2.jpg);
+    /* background-image: url(../img/dus_background_night2.jpg); */
     background-size: cover;
-    background-color: rgba(32, 0, 148, 0.3);
+    background-image: radial-gradient(circle,#FBE8A6,#F4976C);
     background-blend-mode: screen
 }
 

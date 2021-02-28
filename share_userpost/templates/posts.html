@@ -5,7 +5,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/posts_content_styles.css' %}">
-{% endblock head%}
+{% endblock head %}
 
 
 {% block content %}
@@ -19,27 +19,31 @@
         {% for userpost in userpost_list %}
             <a base href="userpost-detail/{{userpost.id}}" style="height: auto;">
                 <div class="card" style="width: 100%;">
-                    <img class="card-img-top" src="{{userpost.image.url}}">
+                    {% for picture in pictures %}
+                        {% if picture.post.id == userpost.id %}
+                        <img class="card-img-top" src="{{picture.image.url}}">
+                        {% endif %}
+                        
+                    {% endfor %}
                     <div class="card-body">
                         <h5 class="card-title">{{userpost.user}}</h5>
-                        <p class="card-text">{{userpost.text}}</p>
+                        <p class="card-text">{{userpost.post_text}}</p>
                     </div>
                 </div>
             </a>
         {% endfor %}
-
-        
     </div>
 </div>
 <div class="modal-bg">
     <div class="modal">
-        <form method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" id="post_creation">
             {% csrf_token %}
-            {{userpost_form.as_p}}
+            <input type="text" name="post_text">
+            <input type="file" name="image" accept="image/*" required>
+            <button onclick="addPostPicture()" type="button">写真を追加する</button>
             <button type="submit">投稿</button>
         </form>
         <span class="modal-close">X</span>
-        
     </div>
 </div>
 <script src="{% static 'js/post.js' %}">
