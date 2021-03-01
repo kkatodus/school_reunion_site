@@ -89,7 +89,8 @@ class PostDetailView(View):
         post = UserPost.objects.get(id=post_id)
         photos = self.get_post_photos(post_id)
         context = {"post":post,
-                   "photos":self.get_post_photos(post_id)}
+                   "photos":photos,
+                   "photo_idxs":[i for i in range(len(photos))]}
         return render(request,self.post_detail_template,context)
 
 class DeletePostView(View):
