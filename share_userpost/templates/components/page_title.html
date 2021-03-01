@@ -8,8 +8,12 @@
         <img src="{% static 'img/isd.png' %}" id="isd" >
     </div>
     <div id="user_display">
-        <h3 id="greeting">Gutentag</h3>
-        <a base href="user/detail/{{ request.user.id }}"><h3 id="username">{{request.user}}</h3></a>
-        <a href="{% url 'account_logout' %}" id="logout_botton">Logout</a>
+        {% if request.user.profile %}
+            <img src="{{ request.user.profile.profile_picture.url }}" id="user_icon">
+        {% else %}
+        <img src="{% static 'img/users.svg' %}" id="user_icon">
+        {% endif %}
+        <a base href="user/detail/{{ request.user.id }}" style="grid-column: 3;"><h3 id="username">{{request.user}}</h3></a>
+        <a href="{% url 'account_logout' %}" id="logout_botton"><button class="btn btn-outline-danger">Logout</button></a>
     </div>  
 </div>

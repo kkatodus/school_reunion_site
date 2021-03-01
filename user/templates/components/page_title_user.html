@@ -9,7 +9,8 @@
     </div>
     <div id="user_display">
         <h3 id="greeting">Gutentag</h3>
+        <img src="{{ request.user.profile.profile_picture.url }}">
         <a base href="{{ request.user.id }}"><h3 id="username">{{request.user}}</h3></a>
-        <a href="{% url 'account_logout' %}" id="logout_botton">Logout</a>
+        <a href="{% url 'account_logout' %}" id="logout_botton"><button class="btn btn-outline-danger">Logout</button></a>
     </div>  
 </div>

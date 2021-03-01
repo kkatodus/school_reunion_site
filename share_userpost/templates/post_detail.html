@@ -27,11 +27,11 @@
             {% for photo in photos %}
                 {% if forloop.counter0 == 0 %}
                     <div class="carousel-item active" data-bs-interval="3500" style="height: 100%;"> 
-                        <img src="{{photo.image.url}}" class="d-block w-100" alt="..." style="height: 100%;">
+                        <img src="{{photo.image.url}}" class="d-block w-100" alt="..." style="height: 100%;object-fit:cover;">
                     </div>
                 {% else %}
                     <div class="carousel-item" data-bs-interval="3500" style="height: 100%;"> 
-                        <img src="{{photo.image.url}}" class="d-block w-100" alt="..." style="height: 100%;">
+                        <img src="{{photo.image.url}}" class="d-block w-100" alt="..." style="height: 100%;object-fit:cover;">
                     </div>
                 {% endif %}
             {% endfor %}
