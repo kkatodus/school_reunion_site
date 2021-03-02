@@ -228,7 +228,8 @@ ul.select-room-box2 a {
 }
 
 .mycomment {
-    margin: 10px;
+    margin: 0px 5px 0px 5px
+    margin-bottom: 0px;
     text-align: right;
     margin: 0px;
     padding: 10px;
