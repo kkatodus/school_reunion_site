@@ -26,8 +26,13 @@
 {% for message in messages %}
     {% if message.user.username == 'yutakijima' %}
         <div class="mycomment">
+                <p>
+                {{message.content}}{{message.user.username}}{{request.user}}
+                </p>
+        </div>
+        <div class = created_at_mine>
             <p>
-            {{message.content}}{{message.user.username}}{{request.user}}
+            {{message.created_at}}
             </p>
         </div>
     {%　else　%}

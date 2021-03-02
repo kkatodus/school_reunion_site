@@ -259,3 +259,8 @@ ul.select-room-box2 a {
     -webkit-transform: rotate(-35deg);
     transform: rotate(-35deg);
 }
+
+.created_at_mine{
+    text-align: right;
+    max-width:94%
+}

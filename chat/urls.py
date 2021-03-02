@@ -23,5 +23,6 @@ urlpatterns = [
     path('room/', room, name='room'),
     path("user/detail/<int:user_id>",UserDetailView.as_view(),name="user_detail"),
     path("user/detail/edit/<int:user_id>",UserProfileEditView.as_view(),name="user_profile_edit"),
-
+    path("chat/<str:room_name>/user/detail/<int:user_id>",UserDetailView.as_view(),name="user_detail"),
+    path("chat/<str:room_name>/user/detail/edit/<int:user_id>",UserProfileEditView.as_view(),name="user_profile_edit"),
 ]
