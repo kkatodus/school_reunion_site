@@ -262,5 +262,6 @@ ul.select-room-box2 a {
 
 .created_at_mine{
     text-align: right;
-    max-width:94%
+    max-width:94%;
+    color:whitesmoke
 }

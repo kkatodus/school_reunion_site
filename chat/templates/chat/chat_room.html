@@ -24,10 +24,10 @@
 
 <div id="chat-room-body">
 {% for message in messages %}
-    {% if message.user.username == 'yutakijima' %}
+    {% if message.user.username == person %}
         <div class="mycomment">
                 <p>
-                {{message.content}}{{message.user.username}}{{request.user}}
+                {{message.content}}
                 </p>
         </div>
         <div class = created_at_mine>
