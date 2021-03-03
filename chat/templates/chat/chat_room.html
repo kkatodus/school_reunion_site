@@ -112,8 +112,8 @@ ws.onmessage = e => {
         document.getElementById('chat-room-body').prepend(messageBox)
         document.getElementsByClassName('chat-box')[0].insertAdjacentHTML('afterbegin', header + body + created_T)
     }else{
-        messageBox.className = 'mycomment'
-        var body = '<p>' + receiveData.message + '</p>'
+        messageBox.className = 'chat-box'
+        var body = '<div class="mycomment">' + '<p>' + receiveData.message + '</p>' + '</div>'
         function  exchanger(x) {
             if (x>12){
                 return ' p.m.'
@@ -121,9 +121,9 @@ ws.onmessage = e => {
                 return ' a.m.'
             }
         }
-        var created_T = '<div id ="created_time">' + moment().format('MMMM') + ' ' +moment().format('D')+', '+moment().format('YYYY') + ', ' +moment().format('h') + ':' + moment().format('mm')+ exchanger(Number(moment().format('H')))+ '</div>'
+        var created_T = '<div class ="created_at_mine">' + '<p>' + moment().format('MMMM') + ' ' +moment().format('D')+', '+moment().format('YYYY') + ', ' +moment().format('h') + ':' + moment().format('mm')+ exchanger(Number(moment().format('H')))+ '</p>' + '</div>'
         document.getElementById('chat-room-body').prepend(messageBox)
-        document.getElementsByClassName('mycomment')[0].insertAdjacentHTML('afterbegin', body + created_T)
+        document.getElementsByClassName('chat-box')[0].insertAdjacentHTML('afterbegin', body + created_T)
     }
 
 }
