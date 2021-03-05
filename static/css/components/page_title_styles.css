@@ -5,7 +5,7 @@
     grid-template-rows: 100%;
     width: 100%;
     height:100%;
-    background-color:azure;
+    background-color:#D4F5F5;
     opacity: 0.8;
 }
 
@@ -43,9 +43,19 @@
 }
 
 #user_display{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns:28% 10% 40% 1fr;
     grid-column:3;
     height:100%;
-    align-items: center
+    width: 100%;
+    align-items: center;
+}
+
+#user_icon{
+    height: 70%;   
+    object-fit: cover;
+    border-radius: 50%;
+    grid-column: 2;
+
 }

@@ -3,6 +3,13 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.template import loader
 from django.shortcuts import redirect
 from django.urls import reverse
+from user.models import *
+import json
+from django.core import serializers
+from django.forms.models import model_to_dict
+import requests
+
+
 
 def index(request):
     room_list = Room.objects.order_by('-created_at')[:5]
@@ -15,10 +22,12 @@ def index(request):
 def chat(request, room_name):
     messages = Message.objects.filter(room__name=room_name).order_by('-created_at')[:50]
     room = Room.objects.filter(name=room_name)[0]
+    person = str(request.user)
     template = loader.get_template('chat/chat_room.html')
     context = {
         'messages': messages,
-        'room': room
+        'room': room,
+        'person':person
     }
     return HttpResponse(template.render(context, request))
 

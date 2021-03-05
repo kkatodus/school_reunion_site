@@ -11,13 +11,11 @@ class UserDetailView(View):
     profile_creation_template = "profile/user_profile_creation.html"
 
     @login_required
-    def get(self,request,user_id=None, *args, **kwargs):
+    def get(self, request, user_id=None, *args, **kwargs):
         user = CustomUser.objects.get(id=user_id)
         if user.profile:
-            print("user has profile")
             return render(request,self.profile_detail_template)
         else:
-            print("user does not have profile")
             form = UserProfileCreationForm()
             context = {"form":form}
             return render(request,self.profile_creation_template, context)

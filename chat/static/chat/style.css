@@ -28,7 +28,7 @@ button {
     padding-left: 20px;
     padding-right: 20px;
     background:salmon;
-    color: whitesmoke;
+    color: white;
     height: 50px;
     opacity:0.6
 }
@@ -47,13 +47,13 @@ form, send-msg {
 
 
 .header2 {
-    height: 50px;
+    height: 55px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size:20px
+    color:azure;
+    font-size:25px
 }
 
 .back {
@@ -91,7 +91,7 @@ form, send-msg {
 }
 
 .chat-box {
-    margin: 5px;
+    margin: 0px 5px 0px 5px ;
 }
 
 #chat-room-body {
@@ -211,7 +211,7 @@ ul.select-room-box2 a {
     border-radius: 10px;
 }
 #chat-room-body::-webkit-scrollbar-thumb {
-    background: #34c0ef;
+    background:#30e852;
     border-radius: 10px
 }
 
@@ -222,3 +222,47 @@ ul.select-room-box2 a {
     font-weight: normal;
 }
 
+#msg {
+    width:400px;
+    height:50px
+}
+
+.mycomment {
+    margin: 10px;
+    margin-bottom: 0px;
+    text-align: right;
+    margin: 0px;
+    padding: 10px;
+    max-width: 95%;
+}
+
+.mycomment p {
+    display: inline-block;
+    position: relative; 
+    margin: 0px;
+    padding: 8px;
+    max-width: 90%;
+    border-radius: 12px;
+    background: #30e852;
+    font-size: 15px;
+    overflow-wrap: break-word;
+    text-align: left;
+
+}
+  
+.mycomment p:after {
+    content: "";
+    position: absolute;
+    top: 3px; 
+    right: -19px;
+    border: 8px solid transparent;
+    border-left: 18px solid #30e852;
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+}
+
+.created_at_mine{
+    text-align: right;
+    max-width:94%;
+    color:whitesmoke
+}
