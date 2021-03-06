@@ -50,7 +50,7 @@ a{
     transition-duration: 300ms;
     border-radius: 30%;
 }
-#username:hover{
+#username:hover, #user_icon:hover{
     animation-timing-function:cubic-bezier(0.895, 0.03, 0.685, 0.22);
     animation-name:wobble_jump_username;
     animation-duration: 800ms;
@@ -106,6 +106,7 @@ a{
     left: 80px;
 
 }
+
 
 #logout_button{
     grid-column: 4;

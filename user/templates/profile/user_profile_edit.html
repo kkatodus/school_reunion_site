@@ -7,12 +7,26 @@
 {% block content %}
     <form method="POST" action="{{request.user.id}}" enctype="multipart/form-data" id="user_profile_container">
         {% csrf_token %}
-        <input type="file" name="profile_picture" accept="image/*" required style="grid-column: 1;">
+        <div id="vis_upload_container">
+            {% if request.user.profile.profile_picture %}
+            <div id="vis_upload_input" style="background-image: url({{ request.user.profile.profile_picture.url }});">
+
+            </div>
+            {% else %}
+            <div id="vis_upload_input">
+                <h3>プロフィール写真を<br>アップロードしてください</h3>
+    
+            </div>
+            {% endif %}
+        </div>
         <div id="user_infos">
             <input type= "date" value="{{request.user.profile.date_moved_to_germany}}" name="date_moved_to_germany">
             <input type="number" value="{{request.user.profile.years_in_germany}}" name="years_in_germany">
             <button type="submit">保存する</button>
         </div>
+
+        <input type="file" name="profile_picture" id="profile_picture_input" #accept="image/*" required style="grid-column: 1;">
+    
         
     </form>
 {% endblock content %}
