@@ -2,11 +2,17 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+from dotenv import load_dotenv
 
 def main():
+    load_dotenv(verbose=True)
+
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dousoukai_event.settings')
+    if os.environ.get('IS_DEV_ENV') == '1':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dousoukai_event.settings_dev')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dousoukai_event.settings')
+    
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

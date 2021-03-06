@@ -28,7 +28,7 @@ button {
     padding-left: 20px;
     padding-right: 20px;
     background:salmon;
-    color: whitesmoke;
+    color: white;
     height: 50px;
     opacity:0.6
 }
@@ -47,13 +47,13 @@ form, send-msg {
 
 
 .header2 {
-    height: 50px;
+    height: 55px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size:20px
+    color:azure;
+    font-size:25px
 }
 
 .back {
@@ -211,7 +211,7 @@ ul.select-room-box2 a {
     border-radius: 10px;
 }
 #chat-room-body::-webkit-scrollbar-thumb {
-    background: #34c0ef;
+    background:#30e852;
     border-radius: 10px
 }
 
