@@ -192,6 +192,11 @@ ul.select-room-box2 a {
 
     padding-left: 5px;
     padding-right: 5px;
+    text-decoration:none;
+}
+
+ul.select-room-box2 a:hover{
+    background-color: rgba(32, 233, 82, 0.6);
 }
 
 
