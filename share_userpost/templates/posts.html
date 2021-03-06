@@ -17,7 +17,7 @@
     </div>
     <div id="user_posts_container">
         {% for userpost in userpost_list %}
-            <a base href="userpost-detail/{{userpost.id}}" style="height: auto;">
+            <a base href="userpost-detail/{{userpost.id}}" style="height: auto;" id="userpost_card">
                 <div class="card" style="width: 100%;">
                     {% for picture in pictures %}
                         {% if picture.post.id == userpost.id %}

@@ -5,12 +5,27 @@
 {% block content %}
 <form method="POST" action="{{request.user.id}}" enctype="multipart/form-data" id="user_profile_container">
     {% csrf_token %}
-    <input type="file" name="profile_picture" accept="image/*" required style="grid-column: 1;">
+    <div id="vis_upload_container">
+        <div id="vis_upload_input">
+
+        </div>
+
+    </div>
     <div id="user_infos">
-        <input type= "date" value="{{request.user.profile.date_moved_to_germany}}" name="date_moved_to_germany">
-        <input type="number" value="{{request.user.profile.years_in_germany}}" name="years_in_germany">
+        <div>
+            <label for="date_moved_to_germany">ドイツにきた日付</label>
+            <input type= "date" value="{{request.user.profile.date_moved_to_germany}}" name="date_moved_to_germany" id="date_moved_to_germany">
+        </div>
+        
+        <div>
+            <label for="years_in_germany">ドイツで過ごした年数</label>
+            <input type="number" value="{{request.user.profile.years_in_germany}}" name="years_in_germany" id="years_in_germany">
+        </div>
+        
         <button type="submit">保存する</button>
     </div>
+
+    <input type="file" name="profile_picture" id="profile_picture_input" #accept="image/*" required style="grid-column: 1;">
     
 </form>
 

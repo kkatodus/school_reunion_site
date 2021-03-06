@@ -30,7 +30,7 @@ a{
     background-color: whitesmoke;
     width: 60%;
     transition-duration: 300ms;
-
+    border-radius: 30%;
 }
 #username:hover{
     border-radius: 50%;
@@ -84,4 +84,8 @@ a{
     grid-column: 2;
     left: 80px;
 
+}
+
+#logout_button{
+    grid-column: 4;
 }

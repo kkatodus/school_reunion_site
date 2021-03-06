@@ -37,3 +37,21 @@ hr{
     width: 50%;
 }
 
+#profile_picture_upload{
+    visibility: hidden;
+}
+
+#vis_upload_container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#vis_upload_input{
+    height: 80%;
+    width: 80%;
+    cursor: pointer;
+    background-color: grey;
+}

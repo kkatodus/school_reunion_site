@@ -20,10 +20,18 @@
     color: azure;
 }
 
+#userpost_card{
+    transition-duration: 300ms;
+}
+
+#userpost_card:hover{
+    transform: rotate(5deg);
+}
+
 .button{
     list-style-type:none;
     text-align: center;
-    background-color: salmon;
+    background-color:whitesmoke;
     font-size: 80%;
     display: grid;
     height: 100%;
