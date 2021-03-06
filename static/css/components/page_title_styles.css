@@ -1,3 +1,21 @@
+@keyframes wobble_jump_username{
+    0%{
+        transform:scale(1)
+    }
+
+    10%{
+        transform:scale(1.05,0.9) translateY(0)
+
+    }
+
+    70%{
+        transform:scale(1,1) translateY(-10px)
+    }
+    100%{
+        transform:scale(1,1) translate(0,0)
+    }
+}
+
 #page_title_container{
     position: relative;
     display: grid;
@@ -33,7 +51,10 @@ a{
     border-radius: 30%;
 }
 #username:hover{
-    border-radius: 50%;
+    animation-timing-function:cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    animation-name:wobble_jump_username;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
 
 }
 #username>h4{

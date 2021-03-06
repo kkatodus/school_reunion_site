@@ -1,7 +1,25 @@
+@keyframes wobble_jump{
+    0%{
+        transform:scale(1)
+    }
+
+    10%{
+        transform:scale(1.05,0.9) translateY(0)
+
+    }
+
+    70%{
+        transform:scale(1,1) translateY(-50px)
+    }
+    100%{
+        transform:scale(1,1) translate(0,0)
+    }
+}
+
+
 #user_profile_container{
     height: 100%;
     width: 100%;
-    background-color: azure;
     display: grid;
     grid-template-columns: 40% 1fr;
     grid-template-rows: 100%;
@@ -53,5 +71,24 @@ hr{
     height: 80%;
     width: 80%;
     cursor: pointer;
-    background-color: grey;
+    border-style:dashed;
+    background-color: rgb(157, 202, 219);
+    border-color: navy;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    
+}
+#vis_upload_input:hover{
+    opacity: 1;
+    animation: wobble_jump 800ms infinite;
+    animation-timing-function: ease-in;
+}
+
+#vis_upload_input>h3{
+    text-align: center;
 }

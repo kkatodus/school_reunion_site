@@ -7,7 +7,8 @@ $("#profile_picture_input").on("change", function(){
         var profile_pic_file = this.files[0];
         var file_reader = new FileReader();
         file_reader.onload = function(e){
-            $("#vis_upload_input").css({"background-image":"url("+e.target.result+")","background-size":"100%","background-repeat":"no-repeat"})
+            $("#vis_upload_input").css({"background-image":"url("+e.target.result+")"})
+            $("#vis_upload_input>h3").hide() 
         }
         file_reader.readAsDataURL(profile_pic_file);
     }
