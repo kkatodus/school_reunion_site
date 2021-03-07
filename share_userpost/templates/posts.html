@@ -40,7 +40,7 @@
             {% csrf_token %}
             <input type="text" name="post_text">
             <input type="file" name="image" accept="image/*" required>
-            <button onclick="addPostPicture()" type="button">写真を追加する</button>
+            <button id="picture_add_button" type="button">写真を追加する</button>
             <button type="submit">投稿</button>
         </form>
         <span class="modal-close">X</span>
