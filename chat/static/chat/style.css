@@ -155,6 +155,10 @@ form, send-msg {
 }
 
 #back{
+    display:flex;
+    position: absolute;
+    left:19%;
+    top:16%;
     width: 70px;
     height:35px;
     background:green;
