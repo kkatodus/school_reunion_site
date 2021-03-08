@@ -1,7 +1,7 @@
 .side_nav_item{
     list-style-type:none;
     text-align: center;
-    background-color:#D4F5F5;
+    background-color:rgb(82, 80, 80);
     font-size: 80%;
     display: grid;
     grid-template-columns: 30% 1fr;
@@ -14,7 +14,7 @@
     margin: auto;
     opacity: 0.6;
     transition: 0.3s;
-    color: navy;
+    color: whitesmoke;
     justify-content: space-around;
 
 }

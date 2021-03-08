@@ -6,9 +6,10 @@
     width: 100%;
     position: fixed;
     /* background-image: url(../img/dus_background_night2.jpg); */
-    background-size: cover;
+    /* background-size: cover;
     background-image: radial-gradient(circle,#FBE8A6,#F4976C);
-    background-blend-mode: screen
+    background-blend-mode: screen */
+    background-color: rgba(22, 21, 21, 0.979);
 }
 
 #header{
