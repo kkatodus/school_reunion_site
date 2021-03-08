@@ -26,6 +26,7 @@
 
 .side_nav_item>a{
     grid-column: 2;
+    text-decoration: none;
 }
 
 
