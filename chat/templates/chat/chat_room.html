@@ -18,8 +18,18 @@
 
 <div class="container">
 <button id="back" onclick=location.href='/chat/'>戻る</button>
-<div class="header2">
-{{ room.name }}
+<div>
+<div class="hidden_box">
+    <label for="label1">{{ room.name }}</label>
+    <input type="checkbox" id="label1"/>
+    <div class="hidden_show">
+    <ul class="select-room-box3">
+        {% for message in messages %}
+            <a href="/user/detail/{{message.user.id}}" >{{ message.user.username }}</a>
+        {% endfor %}
+    </ul>
+    </div>
+</div>
 </div>
 
 <div id="chat-room-body">
