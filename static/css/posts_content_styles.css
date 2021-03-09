@@ -8,6 +8,12 @@
     display: flex;
     justify-content: space-around;
 }
+
+#photo_content_buttons>a{
+    background-color:rgb(82, 80, 80);
+    color: whitesmoke;
+    text-decoration: none;
+}
 #user_posts_container{
     grid-row: 2/3;
     display: grid;
@@ -16,15 +22,26 @@
     height: 100%;
 }
 
+#user_posts_container>a{
+    text-decoration: none;
+    color: whitesmoke;
+    margin: 5px 5px 5px 5px;
+}
+
 .photo_content_buttons>a{
     color: azure;
 }
 
-#userpost_card{
+.card-body{
+    background-color: rgb(53, 52, 52);
+}
+
+
+.userpost_card{
     transition-duration: 300ms;
 }
 
-#userpost_card:hover{
+.userpost_card:hover{
     transform: rotate(5deg);
 }
 
@@ -54,6 +71,7 @@
 
 .card{
     margin: 5px 5px 5px 5px;
+    height: 100%;
     
 }
 
@@ -65,7 +83,7 @@
 }
 
 #act_pic_inputs, #act_buttons{
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 #other_pics{

@@ -17,7 +17,7 @@
     </div>
     <div id="user_posts_container">
         {% for userpost in userpost_list %}
-            <a base href="userpost-detail/{{userpost.id}}" style="height: auto;" id="userpost_card">
+            <a base href="userpost-detail/{{userpost.id}}" style="height: auto;" class="userpost_card">
                 <div class="card" style="width: 100%;">
                     {% for picture in pictures %}
                         {% if picture.post.id == userpost.id %}
@@ -45,10 +45,10 @@
                 <h2>写真を追加</h2>
             </div>
 
-            <input type="text" name="post_text">
+            <input type="text" name="post_text" required>
             <button type="submit" class="btn btn-outline-primary" id="post_button">投稿</button>
             <div id="act_pic_inputs">
-                <input type="file" name="image" accept="image/*" required class="pic_input">                
+                <input type="file" name="image" accept="image/*" required class="pic_input" id="newest_pic_input">                
             </div>
             <div id="act_buttons">
                 <button id="picture_add_button" type="button">写真を追加する</button>
