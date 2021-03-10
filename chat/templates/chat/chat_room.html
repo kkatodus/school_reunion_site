@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}">
 
 <div class="container">
+<div class='second_box'>
 <button id="back" onclick=location.href='/chat/'>戻る</button>
 <div>
 <div class="hidden_box">
@@ -31,7 +32,7 @@
     </div>
 </div>
 </div>
-
+</div>
 <div id="chat-room-body">
 {% for message in messages %}
     {% if message.user.username == person %}
