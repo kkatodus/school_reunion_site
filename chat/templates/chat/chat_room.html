@@ -25,8 +25,8 @@
     <input type="checkbox" id="label1"/>
     <div class="hidden_show">
     <ul class="select-room-box3">
-        {% for message in messages_for_list %}
-            <a href="/user/detail/{{message}}" >{{ message }}</a>
+        {% for member in messages_for_list %}
+            <a href="/user/detail/{{member.user.id}}" >{{ member.user }}</a>
         {% endfor %}
     </ul>
     </div>

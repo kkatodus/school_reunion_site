@@ -21,7 +21,7 @@ def index(request):
 
 def chat(request, room_name):
     messages = Message.objects.filter(room__name=room_name).order_by('-created_at')[:50]
-    message_for_list = Message.objects.filter(room__name=room_name).values_list('user', flat=True).distinct()
+    message_for_list = Message.objects.filter(room__name=room_name).distinct('user')
     room = Room.objects.filter(name=room_name)[0]
     person = str(request.user)
     template = loader.get_template('chat/chat_room.html')
