@@ -12,7 +12,7 @@ import requests
 
 
 def index(request):
-    room_list = Room.objects.order_by('-created_at')[:5]
+    room_list = Room.objects.order_by('-created_at')[:]
     template = loader.get_template('chat/index.html')
     context = {
         'room_list': room_list,
@@ -21,13 +21,15 @@ def index(request):
 
 def chat(request, room_name):
     messages = Message.objects.filter(room__name=room_name).order_by('-created_at')[:50]
+    message_for_list = Message.objects.filter(room__name=room_name).distinct('user')
     room = Room.objects.filter(name=room_name)[0]
     person = str(request.user)
     template = loader.get_template('chat/chat_room.html')
     context = {
         'messages': messages,
         'room': room,
-        'person':person
+        'person':person,
+        'messages_for_list':message_for_list
     }
     return HttpResponse(template.render(context, request))
 
