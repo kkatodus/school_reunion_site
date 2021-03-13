@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "allauth",
     "allauth.account",
-    "allauth.socialaccount"
+    "allauth.socialaccount",
+
+
 ]
 
 MIDDLEWARE = [
@@ -85,17 +87,6 @@ WSGI_APPLICATION = 'dousoukai_event.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "dousoukai_event",
-        'USER':os.environ.get("DB_USER"),
-        'PASSWORD':os.environ.get("DB_PASSWORD"),
-        "HOST":"",
-        "PORT":"",
-    }
-}
 
 
 # Password validation

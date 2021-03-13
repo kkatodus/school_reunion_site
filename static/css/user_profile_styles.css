@@ -43,6 +43,7 @@ hr{
 .user_info_item{
     display: flex;
     justify-content: center;
+    color: whitesmoke;
 }
 
 .user_info_item>img{

@@ -14,6 +14,8 @@ $(".modal-close").on("click",function(){
     
 })
 
+
+
 $("#picture_add_button").on("click",function(){
     $("#newest_pic_input").removeAttr("id"); 
     var new_input = $("<input>").attr({"type":"file",
@@ -41,7 +43,8 @@ $("#pic_preview").on("click",function(){
                                                      "background-image":"url("+e.target.result+")",
                                                      "background-position":"center center",
                                                      "background-size":"cover",
-                                                     "border-radius":"10%"})
+                                                     "border-radius":"10%",})
+                                                   .attr({"class":"past_pic"})
                     $("#other_pics").append(past_pic);
                     $("#pic_preview").css({"background-image":"none"});
                     $("#pic_preview>h2").show();

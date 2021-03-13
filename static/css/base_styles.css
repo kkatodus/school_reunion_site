@@ -40,6 +40,10 @@
     font-size:18px
 }
 
+hr{
+    background-color: whitesmoke;
+}
+
 body{
     margin: 0;
 }

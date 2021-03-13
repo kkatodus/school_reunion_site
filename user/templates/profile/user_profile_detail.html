@@ -13,7 +13,10 @@
                     <img src="{% static 'img/paper-plane.svg' %}"><h5>ドイツにきた日付:{{request.user.profile.date_moved_to_germany}}</h5>           
                 </div>
             {% else %}
-            <h5>ドイツにきた日付:ドイツにきた日付を入力していません</h5>
+                <div class="user_info_item">
+                    <h5>ドイツにきた日付:ドイツにきた日付を入力していません</h5>
+                </div>
+               
             {% endif %} 
             <div class="user_info_item">
                 <img src="{% static 'img/germany-flag.jpg' %}"><h5>ドイツにいた年数：{{ request.user.profile.years_in_germany }}</h5>           

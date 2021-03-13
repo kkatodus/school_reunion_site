@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(41, 39, 39);
+}
+
 .container{
     display:grid;
     place-items: center;
@@ -8,7 +12,7 @@
 #login_bubble{
     height:70%;
     width:60%;
-    background:#D1D1D1;
+    background:rgb(211, 208, 208);
     display: flex;
     border-radius: 30px;
 }

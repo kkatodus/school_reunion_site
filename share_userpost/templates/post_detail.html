@@ -14,7 +14,7 @@
 <div id="post_detail_content">
     <div id="postPicsCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel" style="grid-column:2;width:100%">
         <div class="carousel-indicators">
-            {% for idx in photo_idxs%}
+            {% for idx in photo_idxs %}
                 {% if idx == 0 %}
                     <button type="button" data-bs-target="#postPicsCarousel" data-bs-slide-to="{{idx}}" class="active random" aria-current="true" aria-label="Slide {{idx}}"></button>
                 {% else %}
@@ -57,7 +57,7 @@
 <div class="modal-bg">
     <div class="modal">
         <span class="modal-close">X</span>
-        <h3>本当に削除しますか？</h3>
+        <h3 style="color: whitesmoke;">本当に削除しますか？</h3>
         <a href="delete-post/{{post.id}}">削除する</a>
         
     </div>
