@@ -12,7 +12,7 @@ import os
 from django.core.wsgi import get_wsgi_application
 from dotenv import load_dotenv
 
-load_dotenv(varbose=True)
+load_dotenv(verbose=True)
 
 if os.environ.get('IS_DEV_ENV') == '1':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dousoukai_event.settings_dev')
