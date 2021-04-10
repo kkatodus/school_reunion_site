@@ -10,30 +10,27 @@
     <title>{% block title %}Duesseldorf|Login{% endblock title %}</title>
 </head>
 <body>
-    <div class="container">
-        <div id="login_bubble">
-            <div id="willkommen">
-                <h3 class="section_title">Willkommen</h3>
-                <img src="{% static 'img/germany-flag.jpg' %}" id="germany">
-                <img src="{% static 'img/flag_japan.png' %}" id="japan">
+    <div id="login_bubble">
+        <div id="willkommen">
+            <p class="section_title">Willkommen</p>
+            <img src="{% static 'img/germany-flag.jpg' %}" id="germany">
+            <img src="{% static 'img/flag_japan.png' %}" id="japan">
 
-            </div>
-            <div id="center_separation"></div>
-            <div id="login">
-                
-                <h3 class="section_title">{% block account_function %}Login{% endblock account_function %}</h3>
-                {% block form %}
-                <form method="post" action="{% url 'account_login' %}">
-                    {% csrf_token%}
-                    {{ form.as_p }}
-                    {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name}}" value="{{ redirect_field_value }}">
-                    {% endif %}
-                    <button type="submit">Login</button>
-                    <a href="{% url 'account_signup' %}">still need to signup?</a>
-                </form>
-                {% endblock form %}
-            </div>
+        </div>
+        <div id="center_separation"></div>
+        <div id="login">
+            <p class="section_title">Login</p>
+            {% block form %}
+            <form method="post" action="{% url 'account_login' %}">
+                {% csrf_token%}
+                {{ form.as_p }}
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name}}" value="{{ redirect_field_value }}">
+                {% endif %}
+                <button type="submit">Login</button>
+                <a href="{% url 'account_signup' %}">still need to signup?</a>
+            </form>
+            {% endblock form %}
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

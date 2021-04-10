@@ -1,69 +1,128 @@
-body{
+body {
+  background-color: rgb(41, 39, 39);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#login_bubble {
+  height: 70%;
+  width: 60%;
+  background: rgb(211, 208, 208);
+  display: flex;
+  border-radius: 30px;
+}
+
+#willkommen {
+  height: 100%;
+  width: 50%;
+  text-align: justify;
+}
+
+#login {
+  height: 100%;
+  width: 50%;
+}
+
+#center_separation {
+  height: 70%;
+  width: 2px;
+  background-color: #999999;
+  position: relative;
+  top: 15%;
+}
+
+.section_title {
+  position: relative;
+  top: 5%;
+  left: 10%;
+  font-size: 50px;
+}
+
+#login form {
+  position: relative;
+  top: 20%;
+  left: 10px;
+}
+
+#willkommen img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  top: 25%;
+}
+
+#japan {
+  left: 22%;
+}
+
+#germany {
+  left: 20%;
+}
+
+/*for mobile devices*/
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  body {
     background-color: rgb(41, 39, 39);
-}
-
-.container{
-    display:grid;
-    place-items: center;
-    height:100vh;
-    widows: 100vw;
-}
-
-#login_bubble{
-    height:70%;
-    width:60%;
-    background:rgb(211, 208, 208);
+    margin: 0;
+    padding: 0;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  #login_bubble {
+    height: 70%;
+    width: 60%;
+    background: rgb(211, 208, 208);
     border-radius: 30px;
-}
+  }
 
-#willkommen{
-    height:100%;
-    width:50%;
-    text-align:justify;
-}
+  form {
+    top: -20px;
+  }
+  #willkommen {
+    height: 100%;
+    width: 50%;
+    text-align: justify;
+    position: absolute;
+    visibility: hidden;
+  }
 
-#login{
-    height:100%;
-    width:50%;
-    
-}
+  #login {
+    height: 100%;
+    width: 100%;
+  }
 
-#center_separation{
-    height:70%;
-    width:2px;
-    background-color: #999999;
-    position:relative;
-    top:15%;
-}
+  #center_separation {
+    visibility: hidden;
+  }
 
-.section_title{
+  .section_title {
     position: relative;
     top: 5%;
     left: 10%;
-}
+    font-size: 50px;
+  }
 
-#login form{
-    position:relative;
-    top: 20%;
-    left: 10px;
-}
-
-#willkommen img{
-    height:100px;
-    width: 100px;
+  #willkommen img {
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     position: relative;
     top: 25%;
-}
+  }
 
-#japan{
+  #japan {
     left: 22%;
-}
+  }
 
-#germany{
+  #germany {
     left: 20%;
+  }
 }
-
-
-
