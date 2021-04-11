@@ -51,5 +51,5 @@ class AllUsersView(View):
     queryset = CustomUser.objects.all()
     @login_required
     def get(self, request, *args, **kwargs):
-        context = {"users":self.queryset}
+        context = {"users":self.queryset,"num_users":len(self.queryset)}
         return render(request,self.all_user_template, context)

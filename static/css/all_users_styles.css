@@ -1,3 +1,7 @@
+#num_users {
+  color: white;
+}
+
 @media screen and (min-width: 1224px) {
   .user_info_container {
     width: 80%;

@@ -9,6 +9,7 @@
 
 {% block content %}
 <div id="all_user_container">
+<h4 id="num_users">友達の数：{{num_users}}</h4>
 {% for user in users %}
     <div class="user_info_container">
         {% if user.profile %}
