@@ -1,54 +1,54 @@
-#posts_content{
-    height:100%;
+@media screen and (min-width: 1224px) {
+  #posts_content {
+    height: 100%;
     display: grid;
     grid-template-rows: 10%;
-}
-#photo_content_buttons{
+  }
+  #photo_content_buttons {
     grid-row: 1;
     display: flex;
     justify-content: space-around;
-}
+  }
 
-#photo_content_buttons>a{
-    background-color:rgb(82, 80, 80);
+  #photo_content_buttons > a {
+    background-color: rgb(82, 80, 80);
     color: whitesmoke;
     text-decoration: none;
-}
-#user_posts_container{
+  }
+  #user_posts_container {
     grid-row: 2/3;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     align-content: space-around;
     height: 100%;
-}
+  }
 
-#user_posts_container>a{
+  #user_posts_container > a {
     text-decoration: none;
     color: whitesmoke;
     margin: 5px 5px 5px 5px;
-}
+  }
 
-.photo_content_buttons>a{
+  .photo_content_buttons > a {
     color: azure;
-}
+  }
 
-.card-body{
+  .card-body {
     background-color: rgb(53, 52, 52);
-}
+  }
 
-
-.userpost_card{
+  .userpost_card {
     transition-duration: 300ms;
-}
+  }
 
-.userpost_card:hover{
+  .userpost_card:hover {
     transform: rotate(5deg);
-}
+  }
 
-.button{
-    list-style-type:none;
+  .button {
+    list-style-type: none;
     text-align: center;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     font-size: 80%;
     display: grid;
     height: 100%;
@@ -59,40 +59,40 @@
     margin: auto;
     opacity: 0.6;
     transition: 0.3s;
-}
+  }
 
-.button:current{
+  .button:current {
     opacity: 1;
-}
+  }
 
-.button:hover{
+  .button:hover {
     opacity: 1;
-}
+  }
 
-.card{
+  .card {
     margin: 5px 5px 5px 5px;
     height: 100%;
-    
-}
+  }
 
-#post_creation{
+  #post_creation {
     height: 100%;
     width: 100%;
     top: 10%;
     padding: 10px;
-}
+  }
 
-#act_pic_inputs, #act_buttons{
-    visibility: hidden; 
-}
+  #act_pic_inputs,
+  #act_buttons {
+    visibility: hidden;
+  }
 
-#other_pics{
+  #other_pics {
     height: 15%;
     width: 100%;
     display: flex;
-}
+  }
 
-#pic_preview{
+  #pic_preview {
     height: 60%;
     width: 100%;
     background-color: whitesmoke;
@@ -105,45 +105,44 @@
     transition-duration: 800ms;
     background-size: cover;
     background-position: center center;
+  }
 
-}
-
-.past_pic:hover{
+  .past_pic:hover {
     cursor: pointer;
     border-color: black;
     border-width: 5px;
-}
+  }
 
-#pic_preview>h2{
-    font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック";
-}
+  #pic_preview > h2 {
+    font-family: "Tsukushi A Round Gothic", "筑紫A丸ゴシック";
+  }
 
-#pic_preview:hover{
+  #pic_preview:hover {
     cursor: pointer;
     transform: rotateY(360deg);
-}
+  }
 
-.modal-bg{
+  .modal-bg {
     position: fixed;
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s,opacity 0.5s;
-}
+    transition: visibility 0s, opacity 0.5s;
+  }
 
-.createpost_active{
+  .createpost_active {
     visibility: visible;
     opacity: 1;
-}
+  }
 
-.modal{
+  .modal {
     position: relative;
     background-color: rgb(12, 11, 11);
     width: 30%;
@@ -153,14 +152,178 @@
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
-}
+  }
 
-.modal-close{
+  .modal-close {
     position: absolute;
     right: 5px;
     top: 5px;
     font-weight: bold;
     cursor: pointer;
+  }
 }
 
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #posts_content {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10%;
+  }
+  #photo_content_buttons {
+    grid-row: 1;
+    display: flex;
+    justify-content: space-around;
+  }
 
+  #photo_content_buttons > a {
+    background-color: rgb(82, 80, 80);
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  #user_posts_container {
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-content: space-around;
+    height: 100%;
+  }
+
+  #user_posts_container > a {
+    text-decoration: none;
+    color: whitesmoke;
+    margin: 5px 5px 5px 5px;
+  }
+
+  .photo_content_buttons > a {
+    color: azure;
+  }
+
+  .card-body {
+    background-color: rgb(53, 52, 52);
+  }
+
+  .userpost_card {
+    transition-duration: 300ms;
+  }
+
+  .userpost_card:hover {
+    transform: rotate(5deg);
+  }
+
+  .button {
+    list-style-type: none;
+    text-align: center;
+    background-color: whitesmoke;
+    font-size: 80%;
+    display: grid;
+    height: 100%;
+    place-items: center;
+    border-radius: 5px;
+    width: 20%;
+    text-decoration: none;
+    margin: auto;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+
+  .button:current {
+    opacity: 1;
+  }
+
+  .button:hover {
+    opacity: 1;
+  }
+
+  .card {
+    margin: 5px 5px 5px 5px;
+    height: 100%;
+  }
+
+  #post_creation {
+    height: 100%;
+    width: 100%;
+    top: 10%;
+    padding: 10px;
+  }
+
+  #act_pic_inputs,
+  #act_buttons {
+    visibility: hidden;
+  }
+
+  #other_pics {
+    height: 15%;
+    width: 100%;
+    display: flex;
+  }
+
+  #pic_preview {
+    height: 60%;
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2%;
+    border-color: navy;
+    border-style: dashed;
+    transition-duration: 800ms;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .past_pic:hover {
+    cursor: pointer;
+    border-color: black;
+    border-width: 5px;
+  }
+
+  #pic_preview > h2 {
+    font-family: "Tsukushi A Round Gothic", "筑紫A丸ゴシック";
+  }
+
+  #pic_preview:hover {
+    cursor: pointer;
+    transform: rotateY(360deg);
+  }
+
+  .modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+  }
+
+  .createpost_active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .modal {
+    position: relative;
+    background-color: rgb(12, 11, 11);
+    width: 80%;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  .modal-close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

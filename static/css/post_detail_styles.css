@@ -1,14 +1,33 @@
-#post_detail_content{
+@media screen and (min-width: 1224px) {
+  #post_detail_content {
     display: flex;
     background-color: azure;
     height: 100%;
     width: 100%;
-}
+  }
 
-#post_infos{
+  #post_infos {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
     align-items: center;
+  }
+}
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #post_detail_content {
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    height: 100%;
+    width: 100%;
+  }
+
+  #post_infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+  }
 }

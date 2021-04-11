@@ -15,6 +15,6 @@
         <img src="{% static 'img/users.svg' %}" id="user_icon">
         {% endif %}
         <a base href="user/detail/{{ request.user.id }}" style="grid-column: 3;" id="username"><h4>{{request.user}}</h4></a>
-        <a href="{% url 'account_logout' %}" id="logout_button"><button class="btn btn-outline-danger">Logout</button></a>
+        <a href="{% url 'account_logout' %}" id="logout_button"><button class="btn btn-sm btn-outline-danger">Logout</button></a>
     </div>  
 </div>
