@@ -60,7 +60,7 @@ class AllPostsView(View):
             userpost.save()
             for image in images:
                 picture_form = PictureCreationForm(request.POST,{"image":image})
-                picture = picture_form.save()
+                picture = picture_form.save(commit=False)
                 picture.post = userpost
                 picture.save()              
             messages.success(request,"投稿しました")    
