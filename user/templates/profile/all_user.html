@@ -1,0 +1,25 @@
+{% extends "base_user.html"%}
+{% load static %}
+{% block title %}Duesseldorf | Users{% endblock title%}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/all_users_styles.css' %}">
+{% endblock head %}
+
+
+{% block content %}
+<div id="all_user_container">
+{% for user in users %}
+    <div class="user_info_container">
+        {% if user.profile %}
+        <img src="{{ user.profile.profile_picture.url }}" id="user_icon">
+        {% else %}
+        <img src="{% static 'img/users.svg' %}" id="user_icon">
+        {% endif %}
+        <h3>{{user.username}}</h3>
+    </div>
+    
+
+{% endfor %}
+</div>
+{% endblock content %}

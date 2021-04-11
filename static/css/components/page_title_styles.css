@@ -206,8 +206,8 @@
   }
 
   #user_icon {
-    height: 70%;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     object-fit: cover;
     border-radius: 50%;
     grid-column: 2;

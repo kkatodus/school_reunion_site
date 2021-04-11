@@ -45,3 +45,11 @@ class UserProfileEditView(UserDetailView):
                 (user.profile.years_in_germany,"years_in_germany","number")]
         context = {"data":data}
         return render(request, self.profile_edit_template)
+
+class AllUsersView(View):
+    all_user_template = "profile/all_user.html"
+    queryset = CustomUser.objects.all()
+    @login_required
+    def get(self, request, *args, **kwargs):
+        context = {"users":self.queryset}
+        return render(request,self.all_user_template, context)

@@ -52,6 +52,11 @@
     background-color: whitesmoke;
     color: whitesmoke;
   }
+  svg {
+    height: 45px;
+    width: 45px;
+    color: black;
+  }
 }
 
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -103,5 +108,10 @@
     bottom: 1000px;
     background-color: whitesmoke;
     color: whitesmoke;
+  }
+  svg {
+    height: 45px;
+    width: 45px;
+    color: black;
   }
 }

@@ -1,93 +1,99 @@
-@keyframes wobble_jump{
-    0%{
-        transform:scale(1)
-    }
-    10%{
-        transform:scale(1.05,0.9) translateY(0)
-
-    }
-    70%{
-        transform:scale(1,1) translateY(-50px)
-    }
-    100%{
-        transform:scale(1,1) translate(0,0)
-    }
+@keyframes wobble_jump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.05, 0.9) translateY(0);
+  }
+  70% {
+    transform: scale(1, 1) translateY(-50px);
+  }
+  100% {
+    transform: scale(1, 1) translate(0, 0);
+  }
 }
 
-
-#user_profile_container{
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 40% 1fr;
-    grid-template-rows: 100%;
-    border-radius: 10px;
+#user_profile_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
 }
-#user_profile_container>img{
-    grid-column: 1;
-    width: 100%;
+#user_profile_container > img {
+  grid-column: 1;
+  width: 100%;
 }
 
-#user_infos{
-    grid-column: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+label {
+  color: white;
 }
 
-hr{
-    background-color: white;
+#user_infos {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.user_info_item{
-    display: flex;
-    justify-content: center;
-    color: whitesmoke;
+hr {
+  background-color: white;
 }
 
-.user_info_item>img{
-    height: 20px;
+.user_info_item {
+  display: flex;
+  justify-content: center;
+  color: whitesmoke;
 }
 
-#user_infos>input, #user_infos>button{
-    width: 50%;
+.user_info_item > img {
+  height: 20px;
 }
 
-#profile_picture_upload{
-    visibility: hidden;
+#user_infos > input,
+#user_infos > button {
+  width: 50%;
 }
 
-#vis_upload_container{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#profile_picture_upload {
+  visibility: hidden;
 }
 
-#vis_upload_input{
-    height: 80%;
-    width: 80%;
-    cursor: pointer;
-    border-style:dashed;
-    background-color: rgb(157, 202, 219);
-    border-color: navy;
-    background-position: center center;
-    background-size: cover;
-    border-radius: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.8;
-    
-}
-#vis_upload_input:hover{
-    opacity: 1;
-    animation: wobble_jump 800ms infinite;
-    animation-timing-function: ease-in;
+#vis_upload_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#vis_upload_input>h3{
-    text-align: center;
+#vis_upload_input {
+  height: 80%;
+  width: 80%;
+  cursor: pointer;
+  border-style: dashed;
+  background-color: rgb(157, 202, 219);
+  border-color: navy;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+#vis_upload_input:hover {
+  opacity: 1;
+  animation: wobble_jump 800ms infinite;
+  animation-timing-function: ease-in;
+}
+
+#vis_upload_input > h3 {
+  text-align: center;
+}
+
+#profile_picture_input {
+  visibility: hidden;
+  position: absolute;
 }

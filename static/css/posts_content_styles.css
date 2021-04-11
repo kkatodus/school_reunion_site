@@ -160,6 +160,7 @@
     top: 5px;
     font-weight: bold;
     cursor: pointer;
+    color: white;
   }
 }
 
@@ -325,5 +326,7 @@
     top: 5px;
     font-weight: bold;
     cursor: pointer;
+    font-size: 30px;
+    color: white;
   }
 }

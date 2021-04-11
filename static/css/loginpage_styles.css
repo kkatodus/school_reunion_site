@@ -1,67 +1,69 @@
-body {
-  background-color: rgb(41, 39, 39);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+@media screen and (min-width: 1224px) {
+  body {
+    background-color: rgb(41, 39, 39);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
 
-#login_bubble {
-  height: 70%;
-  width: 60%;
-  background: rgb(211, 208, 208);
-  display: flex;
-  border-radius: 30px;
-}
+  #login_bubble {
+    height: 70%;
+    width: 60%;
+    background: rgb(211, 208, 208);
+    display: flex;
+    border-radius: 30px;
+  }
 
-#willkommen {
-  height: 100%;
-  width: 50%;
-  text-align: justify;
-}
+  #willkommen {
+    height: 100%;
+    width: 50%;
+    text-align: justify;
+  }
 
-#login {
-  height: 100%;
-  width: 50%;
-}
+  #login {
+    height: 100%;
+    width: 50%;
+  }
 
-#center_separation {
-  height: 70%;
-  width: 2px;
-  background-color: #999999;
-  position: relative;
-  top: 15%;
-}
+  #center_separation {
+    height: 70%;
+    width: 2px;
+    background-color: #999999;
+    position: relative;
+    top: 15%;
+  }
 
-.section_title {
-  position: relative;
-  top: 5%;
-  left: 10%;
-  font-size: 50px;
-}
+  .section_title {
+    position: relative;
+    top: 5%;
+    left: 10%;
+    font-size: 50px;
+  }
 
-#login form {
-  position: relative;
-  top: 20%;
-  left: 10px;
-}
+  #login form {
+    position: relative;
+    top: 20%;
+    left: 10px;
+  }
 
-#willkommen img {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  position: relative;
-  top: 25%;
-}
+  #willkommen img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: 25%;
+  }
 
-#japan {
-  left: 22%;
-}
+  #japan {
+    left: 22%;
+  }
 
-#germany {
-  left: 20%;
+  #germany {
+    left: 20%;
+  }
 }
 
 /*for mobile devices*/
@@ -78,14 +80,11 @@ body {
 
   #login_bubble {
     height: 70%;
-    width: 60%;
+    width: 80%;
     background: rgb(211, 208, 208);
     border-radius: 30px;
   }
 
-  form {
-    top: -20px;
-  }
   #willkommen {
     height: 100%;
     width: 50%;
@@ -102,12 +101,15 @@ body {
   #center_separation {
     visibility: hidden;
   }
-
+  form {
+    margin: 10px;
+  }
   .section_title {
     position: relative;
     top: 5%;
     left: 10%;
     font-size: 50px;
+    padding-bottom: 40px;
   }
 
   #willkommen img {
