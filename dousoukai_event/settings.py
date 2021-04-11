@@ -1,7 +1,7 @@
 from .settings_common import *
 
 INSTALLED_APPS += ["storages",]
-DEBUG=False
+DEBUG=True
 
 DATABASES = {
     'default': {
