@@ -1,11 +1,9 @@
 media/
 *.pyc
-migrations/
-__pycache__/
+migrations/*
+__pycache__/*
 *.DS_Store
 *.bat
 memo
 venv_dousoukai/*
 .env
-
-data/
